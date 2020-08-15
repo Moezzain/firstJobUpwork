@@ -17,17 +17,16 @@ app.listen(process.env.PORT || 8080, () =>
   console.log(`Listening on port ${process.env.PORT || 8080}!`),
 );
 
-//__body parsing handelers__
+//__requests body parsing handelers__
 app.use(BodyParser.json()); // support json encoded bodies
 app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
-
 
 // :::::::::Routes::::::::
 //__Test Running__
 app.get('/Test', (req, res) => {
-    let ret = {};
-    ret.Succ = "True";
-    res.send(ret);
+  let ret = {};
+  ret.Succ = 'True';
+  res.send(ret);
 });
 
 //__Login check credentilas route__

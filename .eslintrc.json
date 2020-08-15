@@ -3,10 +3,8 @@
   "extends": [
     "airbnb",
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier/flowtype",
-    "prettier/react",
     "prettier/standard"
   ],
   "env": {
@@ -21,7 +19,6 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
   },
   "overrides": [
       {

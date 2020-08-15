@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "lint": "eslint --ext js --ext jsx src || exit 0",
-    "lintfix": "eslint --fix \"src/**/*.js\" \"src/**/**/*.js\"",
-    "format": "prettier --write \"src/**/*.js\""
+    "lint": "eslint --ext js || exit 0",
+    "lintfix": "eslint --fix \"**/*.js\" \"**/**/*.js\"",
+    "format": "prettier --write \"**/*.js\""
   },
   "repository": {
     "type": "git",
