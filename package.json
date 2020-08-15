@@ -5,15 +5,25 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon src/server/index.js",
-    "start": "node src/server/index.js",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "lintfix": "eslint --fix \"src/**/*.js\" \"src/**/**/*.js\"",
     "format": "prettier --write \"src/**/*.js\""
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moezzain/E-Commerce.git"
+  },
+  "keywords": [
+    "Node js",
+    "Mysql",
+    "Express",
+    "E-commerce"
+  ],
   "author": "Moez Babiker",
   "license": "ISC",
+  "homepage": "https://github.com/Moezzain/E-Commerce#readme",
   "dependencies": {
     "express": "^4.17.1",
     "dotenv": "^5.0.1",
