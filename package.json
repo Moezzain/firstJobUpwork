@@ -8,8 +8,8 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "lint": "eslint --ext js || exit 0",
-    "lintfix": "eslint --fix \"**/*.js\" \"**/**/*.js\"",
-    "format": "prettier --write \"**/*.js\""
+    "lintfix": "eslint --fix \"*.js\" \"**/*.js\"",
+    "format": "prettier --write \"*.js\" \"**/*.js\""
   },
   "repository": {
     "type": "git",

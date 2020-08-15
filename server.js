@@ -24,13 +24,13 @@ app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
 // :::::::::Routes::::::::
 //__Test Running__
 app.get('/Test', (req, res) => {
-  let ret = {};
-  ret.Succ = 'True';
-  res.send(ret);
+    let ret = {};
+    ret.Succ = "True";
+    res.send(ret);
 });
-
-//__Login check credentilas route__
-app.post('/login', APIcontrolers._checkLoginCredentials_);
 
 //__Refresh Service list__
 app.get('/RefreshServicesList', APIcontrolers._Refresh_ServicesList);
+
+//__Login check credentilas route__
+app.post('/login', APIcontrolers._checkLoginCredentials_);
