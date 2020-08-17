@@ -8,9 +8,12 @@ E-Commerce backend using Node &amp; mysql
     4-npm run dev
 
 #App routes:
-    
+/cancellation_reasons
+/cancellation_reasons/:id    
+
 
 #Response codes and Correspondoing Messages:
 
-    0       Successful
+    0       Success
     9       Wrong Credentails
+    -1      Error

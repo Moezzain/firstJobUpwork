@@ -53,6 +53,91 @@ class modelClass {
     });
   }
 
+  //__Cancellation_reasons Models__
+  _GET_cancellation_reasons_DATA_(rowID) {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        'SELECT * FROM ahlanwshlan.cancellation_reasons WHERE id = ?',
+        [rowID],
+        function(err, result) {
+          if (err) {
+            console.log(err);
+            resolve(err);
+          }
+
+          console.log('Result: ', result /* [0][1].email */); //when using procedures
+          resolve(JSON.stringify(result));
+        },
+      );
+    });
+  }
+
+  _POST_cancellation_reasons_DATA_(body) {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        'INSERT INTO `cancellation_reasons` VALUES(?, ?, ?, ?)',
+        body.created_at,
+        body.updated_at,
+        body.name,
+        body.description,
+        function(err, result) {
+          if (err) {
+            console.log(err);
+            resolve(err);
+          }
+
+          console.log('Result: ', result /* [0][1].email */); //when using procedures
+          resolve(JSON.stringify(result));
+        },
+      );
+    });
+  }
+
+  _PUT_cancellation_reasons_DATA_(body) {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        'UPDATE `cancellation_reasons` SET id = ?, created_at = ?, updated_at = ?, name = ?, description = ? WHERE id = ?  ',
+        body.id,
+        body.created_at,
+        body.updated_at,
+        body.name,
+        body.description,
+        body.id,
+        function(err, result) {
+          if (err) {
+            console.log(err);
+            resolve(err);
+          }
+
+          console.log('Result: ', result /* [0][1].email */); //when using procedures
+          resolve(JSON.stringify(result));
+        },
+      );
+    });
+  }
+
+  _DELETE_cancellation_reasons_DATA_(rowID) {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        'DELETE FROM `cancellation_reasons` WHERE id = ?',
+        rowID,
+        function(err, result) {
+          if (err) {
+            console.log(err);
+            resolve(err);
+          }
+
+          console.log('Result: ', result /* [0][1].email */); //when using procedures
+          resolve(JSON.stringify(result));
+        },
+      );
+    });
+  }
+
   _CallProcedure_() {
     //__Test calling procedure__
     var DB = this.dbConn;
