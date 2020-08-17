@@ -58,7 +58,7 @@ class modelClass {
     var DB = this.dbConn;
     return new Promise(function(resolve, reject) {
       DB.query(
-        'SELECT * FROM ahlanwshlan.cancellation_reasons WHERE id = ?',
+        'SELECT * FROM ahlanwshlan.cancellation_reasons WHERE id = ?;',
         [rowID],
         function(err, result) {
           if (err) {
@@ -66,8 +66,8 @@ class modelClass {
             resolve(err);
           }
 
-          console.log('Result: ', result /* [0][1].email */); //when using procedures
-          resolve(JSON.stringify(result));
+          console.log('Result: ', result[0] /* [1].email */); //when using procedures
+          resolve(JSON.stringify(result[0]));
         },
       );
     });
@@ -75,21 +75,19 @@ class modelClass {
 
   _POST_cancellation_reasons_DATA_(body) {
     var DB = this.dbConn;
+    // console.log('toString(body.created_at: ' + JSON.stringify(body));
     return new Promise(function(resolve, reject) {
       DB.query(
-        'INSERT INTO `cancellation_reasons` VALUES(?, ?, ?, ?)',
-        body.created_at,
-        body.updated_at,
-        body.name,
-        body.description,
+        'INSERT INTO ahlanwshlan.cancellation_reasons(created_at,updated_at, name, description) VALUES(?,?, ?, ?);',
+        [body.created_at, body.updated_at, body.name, body.description],
         function(err, result) {
           if (err) {
-            console.log(err);
+            console.log('error: ' + err);
             resolve(err);
           }
 
-          console.log('Result: ', result /* [0][1].email */); //when using procedures
-          resolve(JSON.stringify(result));
+          // console.log('Result: ', result /* [1].email */); //when using procedures
+          resolve(JSON.stringify('Success'));
         },
       );
     });
@@ -97,23 +95,26 @@ class modelClass {
 
   _PUT_cancellation_reasons_DATA_(body) {
     var DB = this.dbConn;
+    // console.log('@' + JSON.stringify(body) + 'name = ' + body.name);
     return new Promise(function(resolve, reject) {
       DB.query(
-        'UPDATE `cancellation_reasons` SET id = ?, created_at = ?, updated_at = ?, name = ?, description = ? WHERE id = ?  ',
-        body.id,
-        body.created_at,
-        body.updated_at,
-        body.name,
-        body.description,
-        body.id,
+        'UPDATE ahlanwshlan.cancellation_reasons SET created_at = ?, updated_at = ?, name = ?, description = ? WHERE id = ?;',
+        [
+          body.created_at,
+          body.updated_at,
+          body.name,
+          body.description,
+          body.id
+        ],
         function(err, result) {
+          console.log('Resultall: ' + JSON.stringify(result) )
           if (err) {
             console.log(err);
             resolve(err);
           }
 
-          console.log('Result: ', result /* [0][1].email */); //when using procedures
-          resolve(JSON.stringify(result));
+          // console.log('Result: ', result[0] /* [1].email */); //when using procedures
+          resolve(JSON.stringify('Success'));
         },
       );
     });
@@ -123,7 +124,7 @@ class modelClass {
     var DB = this.dbConn;
     return new Promise(function(resolve, reject) {
       DB.query(
-        'DELETE FROM `cancellation_reasons` WHERE id = ?',
+        'DELETE FROM `cancellation_reasons` WHERE id = ?;',
         rowID,
         function(err, result) {
           if (err) {
@@ -131,8 +132,8 @@ class modelClass {
             resolve(err);
           }
 
-          console.log('Result: ', result /* [0][1].email */); //when using procedures
-          resolve(JSON.stringify(result));
+          console.log('Result: ', result[0] /* [1].email */); //when using procedures
+          resolve(JSON.stringify(result[0]));
         },
       );
     });

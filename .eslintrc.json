@@ -13,12 +13,11 @@
   },
   "plugins": [
     "eslint-plugin",
-    "react",
     "prettier"
   ],
   "rules": {
     "no-console": "off",
-    "comma-dangle": "off",
+    "comma-dangle": "off"
   },
   "overrides": [
       {
