@@ -26,7 +26,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -34,7 +34,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -52,14 +52,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -76,14 +76,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -109,14 +109,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -135,7 +135,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -143,7 +143,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -160,14 +160,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -184,14 +184,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -217,14 +217,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -243,7 +243,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -251,7 +251,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -268,14 +268,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -292,14 +292,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -325,14 +325,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -351,7 +351,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -359,7 +359,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -376,14 +376,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -400,14 +400,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -433,14 +433,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -459,7 +459,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -467,7 +467,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -484,14 +484,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -508,14 +508,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -541,14 +541,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -567,7 +567,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -575,7 +575,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -592,14 +592,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -616,14 +616,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -649,14 +649,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -675,7 +675,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -683,7 +683,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -700,14 +700,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -724,14 +724,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -757,14 +757,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -783,7 +783,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -791,7 +791,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -808,14 +808,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -832,14 +832,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -865,14 +865,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -891,7 +891,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -899,7 +899,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -916,14 +916,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         // logMessage(Info,JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -940,14 +940,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -973,14 +973,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -999,7 +999,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1007,7 +1007,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1024,14 +1024,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1048,14 +1048,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1081,14 +1081,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1107,7 +1107,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1115,7 +1115,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1132,14 +1132,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1156,14 +1156,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1189,14 +1189,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1215,7 +1215,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1223,7 +1223,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1240,14 +1240,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1264,14 +1264,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1297,14 +1297,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1323,7 +1323,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1331,7 +1331,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1348,14 +1348,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1372,14 +1372,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1405,14 +1405,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1431,7 +1431,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1439,7 +1439,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1456,14 +1456,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1480,14 +1480,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1513,14 +1513,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1539,7 +1539,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1547,7 +1547,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1564,14 +1564,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1588,14 +1588,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1621,14 +1621,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1647,7 +1647,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1655,7 +1655,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1672,14 +1672,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1696,14 +1696,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1729,14 +1729,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1755,7 +1755,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1763,7 +1763,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1780,14 +1780,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1804,14 +1804,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1837,14 +1837,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1863,7 +1863,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1871,7 +1871,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1888,14 +1888,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1912,14 +1912,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1945,14 +1945,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1971,7 +1971,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -1979,7 +1979,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -1996,14 +1996,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2020,14 +2020,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2053,14 +2053,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2079,7 +2079,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2087,7 +2087,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2104,14 +2104,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2128,14 +2128,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2161,14 +2161,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2187,7 +2187,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2195,7 +2195,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2212,14 +2212,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2236,14 +2236,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2269,14 +2269,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2295,7 +2295,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2303,7 +2303,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2320,14 +2320,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2344,14 +2344,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2377,14 +2377,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2403,7 +2403,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2411,7 +2411,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2428,14 +2428,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2452,14 +2452,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2485,14 +2485,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2511,7 +2511,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2519,7 +2519,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2536,14 +2536,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2560,14 +2560,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2593,14 +2593,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2619,7 +2619,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2627,7 +2627,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2644,14 +2644,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2668,14 +2668,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2701,14 +2701,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2727,7 +2727,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2735,7 +2735,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2752,14 +2752,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2776,14 +2776,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2809,14 +2809,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2835,7 +2835,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2843,7 +2843,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2860,14 +2860,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2884,14 +2884,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2917,14 +2917,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2943,7 +2943,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -2951,7 +2951,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2968,14 +2968,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -2992,14 +2992,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3025,14 +3025,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3051,7 +3051,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3059,7 +3059,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3076,14 +3076,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3100,14 +3100,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3133,14 +3133,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3159,7 +3159,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3167,7 +3167,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3184,14 +3184,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3208,14 +3208,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3241,14 +3241,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3267,7 +3267,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3275,7 +3275,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3292,14 +3292,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3316,14 +3316,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3349,14 +3349,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3375,7 +3375,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3383,7 +3383,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3400,14 +3400,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3424,14 +3424,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3457,14 +3457,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3483,7 +3483,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3491,7 +3491,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3508,14 +3508,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3532,14 +3532,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3565,14 +3565,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3591,7 +3591,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3599,7 +3599,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3616,14 +3616,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3640,14 +3640,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3673,14 +3673,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3699,7 +3699,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3707,7 +3707,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3724,14 +3724,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3748,14 +3748,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3781,14 +3781,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3807,7 +3807,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3815,7 +3815,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3832,14 +3832,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3856,14 +3856,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3889,14 +3889,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3915,7 +3915,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -3923,7 +3923,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3940,14 +3940,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3964,14 +3964,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -3997,14 +3997,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4023,7 +4023,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4031,7 +4031,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4048,14 +4048,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4072,14 +4072,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4105,14 +4105,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4131,7 +4131,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4139,7 +4139,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4156,14 +4156,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4180,14 +4180,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4213,14 +4213,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4239,7 +4239,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4247,7 +4247,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4264,14 +4264,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4288,14 +4288,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4321,14 +4321,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4347,7 +4347,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4355,7 +4355,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4372,14 +4372,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4396,14 +4396,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4429,14 +4429,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4455,7 +4455,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4463,7 +4463,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4480,14 +4480,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4504,14 +4504,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4537,14 +4537,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4563,7 +4563,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4571,7 +4571,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4588,14 +4588,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4612,14 +4612,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4645,14 +4645,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4671,7 +4671,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4679,7 +4679,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4696,14 +4696,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4720,14 +4720,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4753,14 +4753,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4779,7 +4779,7 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         returnedData['data'] = result;
@@ -4787,7 +4787,7 @@ class Controllersclass {
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4804,14 +4804,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(201, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4828,14 +4828,14 @@ class Controllersclass {
         //  Check Error
         if (result.errno) throw result.sqlMessage;
 
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
         logMessage(Info, JSON.stringify(returnedData));
         res.send(200, returnedData); //  Return Res
       })
       .catch(error => {
-        //  Constucting Response
+        //  Constructing Response
         returnedData['response_code'] = 10;
         returnedData['response_message'] = 'Error: DataBase Error';
 
@@ -4861,14 +4861,14 @@ class Controllersclass {
           //  Check Error
           if (result.errno) throw result.sqlMessage;
 
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 0;
           returnedData['response_message'] = 'Success';
           logMessage(Info, JSON.stringify(returnedData));
           res.send(200, returnedData); //  Return Res
         })
         .catch(error => {
-          //  Constucting Response
+          //  Constructing Response
           returnedData['response_code'] = 10;
           returnedData['response_message'] = 'Error: DataBase Error';
 
