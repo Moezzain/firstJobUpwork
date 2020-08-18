@@ -16,4 +16,5 @@ E-Commerce backend using Node &amp; mysql
 
     0       Success
     9       Wrong Credentails
-    -1      Error
+    10      DataBase Error
+    11      Invalid id
