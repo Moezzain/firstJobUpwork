@@ -16,7 +16,7 @@ const app = express();
 //__listen to specific port that application will be working on__
 //__PORT specified in the .env file__
 app.listen(process.env.PORT || 8080, () =>
-logMessage(Info,`Listening on port ${process.env.PORT || 8080}!`),
+  logMessage(Info, `Listening on port ${process.env.PORT || 8080}!`),
 );
 
 //__requests body parsing handelers__
@@ -24,13 +24,6 @@ app.use(BodyParser.json()); // support json encoded bodies
 app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
 
 // :::::::::Routes::::::::
-//__Test Running__
-app.get('/Test/:id', (req, res) => {
-  let ret = {};
-  ret.Succ = 'True';
-  res.send(ret);
-});
-
 //__Appinformations CRUD__
 app.get('/appinformations/:id', APIcontrollers._appinformations_Read_); //Read
 app.get('/appinformations', APIcontrollers._appinformations_Read_); //Read all
@@ -133,10 +126,13 @@ app.delete('/delivery_car_types', APIcontrollers._delivery_car_types_Delete_); /
 
 //__Delivery_drivers_offers CRUD__
 app.get(
-  '/very_drivers_offers/:id',
+  '/delivery_drivers_offers/:id',
   APIcontrollers._delivery_drivers_offers_Read_,
 ); //Read
-app.get('/very_drivers_offers', APIcontrollers._delivery_drivers_offers_Read_); //Read all
+app.get(
+  '/delivery_drivers_offers',
+  APIcontrollers._delivery_drivers_offers_Read_,
+); //Read all
 app.post(
   '/delivery_drivers_offers',
   APIcontrollers._delivery_drivers_offers_Creat_,
@@ -358,8 +354,11 @@ app.delete('/special_offers/:id', APIcontrollers._special_offers_Delete_); //Del
 app.delete('/special_offers', APIcontrollers._special_offers_Delete_); //Delete //Error Handling
 
 //__Subscription_packages CRUD__
-app.get('/cription_packages/:id', APIcontrollers._subscription_packages_Read_); //Read
-app.get('/cription_packages', APIcontrollers._subscription_packages_Read_); //Read all
+app.get(
+  '/subscription_packages/:id',
+  APIcontrollers._subscription_packages_Read_,
+); //Read
+app.get('/subscription_packages', APIcontrollers._subscription_packages_Read_); //Read all
 app.post(
   '/subscription_packages',
   APIcontrollers._subscription_packages_Creat_,
