@@ -13,7 +13,14 @@ E-Commerce backend using Node &amp; mysql
     10      DataBase Error
     11      Invalid id
 
+#Logging:
+Two files for logging will get generated once app is started:
+    1-error.log     Where All errors are getting logged.
+    2-combined.log  Where All service notifications are being logged.
+
 #App routes:
+
+    /
 
     /appinformations
     /appinformations/:id
