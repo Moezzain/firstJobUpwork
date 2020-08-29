@@ -7,14 +7,15 @@ E-Commerce backend using Node &amp; mysql
     3-npm i
     4-npm run dev
 
-#Response codes and Correspondoing Messages:
+#   Response codes and Correspondoing Messages:
 
     0       Success
     10      DataBase Error
     11      Invalid id
 
-#Logging:
+#   Logging:
 Two files for logging will get generated once app is started:
+
     1-error.log     Where All errors are getting logged.
     2-combined.log  Where All service notifications are being logged.
 
