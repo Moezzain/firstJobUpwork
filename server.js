@@ -29,7 +29,7 @@ app.listen(process.env.PORT || 8080, () =>
 //__requests body parsing handelers__
 app.use(BodyParser.json()); // support json encoded bodies
 app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
-//__Static Files__
+//__React Static Files__
 app.use(express.static(path.join(ReactBuildLocation)));
 
 // :::::::::Routes::::::::
