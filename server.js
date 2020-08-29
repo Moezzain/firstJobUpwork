@@ -1,6 +1,8 @@
 // :::::Start with imports::::
 //__Express framework import__
 const express = require('express');
+//__Path manipulation module__
+const path = require('path');
 //__Logger__
 const {logMessage, Info} = require('./Services/loggingService');
 //__used to access of the .env file__
@@ -14,6 +16,10 @@ const APIcontrollers = require('./Controlers/API_Controlers');
 // :::::Creat and Start Express App:::::
 const app = express();
 
+// :::::Set Static File Directory:::::
+const ReactBuildLocation =
+  'C:\\Users\\MOEZ\\Desktop\\JS\\project\\material-kit-react-master\\build';
+
 //__listen to specific port that application will be working on__
 //__PORT specified in the .env file__
 app.listen(process.env.PORT || 8080, () =>
@@ -23,8 +29,15 @@ app.listen(process.env.PORT || 8080, () =>
 //__requests body parsing handelers__
 app.use(BodyParser.json()); // support json encoded bodies
 app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
+//__Static Files__
+app.use(express.static(path.join(ReactBuildLocation)));
 
 // :::::::::Routes::::::::
+//__React App__
+app.get('/', (req, res) => {
+  res.sendFile(path.join(ReactBuildLocation, 'index.html'));
+});
+
 //__Appinformations CRUD__
 app.get('/appinformations/:id', APIcontrollers._appinformations_Read_); //Read
 app.get('/appinformations', APIcontrollers._appinformations_Read_); //Read all
@@ -432,3 +445,9 @@ app.post('/users', APIcontrollers._users_Creat_); //Creat
 app.put('/users', APIcontrollers._users_Update_); //Update
 app.delete('/users/:id', APIcontrollers._users_Delete_); //Delete
 app.delete('/users', APIcontrollers._users_Delete_); //Delete //Error Handling
+
+//__Handeling React Routes
+app.get('*', function(req, res) {
+  // res.sendFile(path.join(ReactBuildLocation, 'index.html')); //When having multible pages at the react app
+  res.redirect('/');
+});
