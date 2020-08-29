@@ -16,9 +16,8 @@ const APIcontrollers = require('./Controlers/API_Controlers');
 // :::::Creat and Start Express App:::::
 const app = express();
 
-// :::::Set Static File Directory:::::
-const ReactBuildLocation =
-  'C:\\Users\\MOEZ\\Desktop\\JS\\project\\material-kit-react-master\\build';
+// :::::Set React Static File Directory:::::
+const ReactBuildLocation = process.env.REACT_BUILD_APP;
 
 //__listen to specific port that application will be working on__
 //__PORT specified in the .env file__
