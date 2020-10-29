@@ -1,0 +1,30 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "prettier/standard"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "eslint-plugin",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": "off",
+    "comma-dangle": "off"
+  },
+  "overrides": [
+      {
+        "files": "tests/**",
+        "rules": {
+          "no-template-curly-in-string": 1
+        }
+      }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "E-commerce",
+  "version": "1.0.0",
+  "description": "E-Commerce backend using Node & mysql",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "eslint --ext js || exit 0",
+    "lintfix": "eslint --fix \"*.js\" \"**/*.js\"",
+    "format": "prettier --write \"*.js\" \"**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moezzain/E-Commerce.git"
+  },
+  "keywords": [
+    "Node js",
+    "Mysql",
+    "Express",
+    "E-commerce"
+  ],
+  "author": "Moez Babiker",
+  "license": "ISC",
+  "homepage": "https://github.com/Moezzain/E-Commerce#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.0",
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-eslint-plugin": "^2.2.1",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "nodemon": "^1.17.3",
+    "prettier": "1.19.1"
+  }
+}
