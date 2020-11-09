@@ -7,6 +7,10 @@ const path = require('path');
 const {logMessage, Info} = require('./Services/loggingService');
 //__used to access of the .env file__
 require('dotenv').config();
+//__File upload handling__
+const fileUpload = require('express-fileupload');
+//__CORS Handling__
+const cors = require('cors');
 //__used to parse the body of the requests to a JSON format for easier handeling of the data__
 const BodyParser = require('body-parser');
 
@@ -18,6 +22,7 @@ const app = express();
 
 // :::::Set React Static File Directory:::::
 const ReactBuildLocation = process.env.REACT_BUILD_APP;
+const ExelSaveLocation = process.env.EXCEL_SAVE_DIR;
 
 //__listen to specific port that application will be working on__
 //__PORT specified in the .env file__
@@ -28,6 +33,11 @@ app.listen(process.env.PORT || 8080, () =>
 //__requests body parsing handelers__
 app.use(BodyParser.json()); // support json encoded bodies
 app.use(BodyParser.urlencoded({extended: true})); // support url_encoded bodies
+// middleware
+app.use(express.static('public')); //to access the files in public folder
+app.use(cors()); // it enables all cors requests
+app.use(fileUpload()); // file upload api
+
 //__React Static Files__
 app.use(express.static(path.join(ReactBuildLocation)));
 
@@ -52,6 +62,9 @@ app.post('/categories', APIcontrollers._categories_Creat_); //Creat
 app.put('/categories', APIcontrollers._categories_Update_); //Update
 app.delete('/categories/:id', APIcontrollers._categories_Delete_); //Delete
 app.delete('/categories', APIcontrollers._categories_Delete_); //Delete //Error Handling
+
+//__upload excelController__
+app.post('/uploadExel', APIcontrollers._excelUpload_Post_);
 
 //__Handeling React Routes
 app.get('*', function(req, res) {

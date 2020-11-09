@@ -1,5 +1,9 @@
 //__importing my Model class__
 const Model = require('../Models/BasicModel');
+//__Mailer__
+const sendEmail = require('../Services/nodeMailerConf');
+//__Exec Command__
+const {exec} = require('child_process');
 //__Logger__
 const {logMessage, Info, logError} = require('../Services/loggingService');
 
@@ -231,6 +235,37 @@ class Controllersclass {
           logMessage(logError, error);
           res.send(500, returnedData); //  Return Res
         });
+  }
+
+  _excelUpload_Post_(req, res) {
+    if (!req.files) {
+      return res.status(500).send({msg: 'file is not found'});
+    }
+
+    console.log(JSON.stringify(req.files));
+    // accessing the file
+    const myFile = req.files.file; //  mv() method places the file inside public directory
+    myFile.mv(`${ExelSaveLocation}/${myFile.name}`, function(err) {
+      if (err) {
+        console.log(err);
+        return res.status(500).send({msg: 'Error occured'});
+      }
+      // Run php script
+      console.log('Running Script...');
+      exec('php file.php', (error, stdout, stderr) => {
+        if (error) {
+          console.log(`error: ${error.message}`);
+          return;
+        }
+        if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          return;
+        }
+        console.log(`stdout: ${stdout}`);
+      });
+      // returing the response with file path and name
+      return res.status(200).send({name: myFile.name, path: `/${myFile.name}`});
+    });
   }
 }
 
