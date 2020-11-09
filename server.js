@@ -39,7 +39,7 @@ app.use(cors()); // it enables all cors requests
 app.use(fileUpload()); // file upload api
 
 //__React Static Files__
-app.use(express.static(path.join(__dirname, 'build');
+app.use(express.static(path.join(__dirname, 'build')));
 
 // :::::::::Routes::::::::
 //__React App__
