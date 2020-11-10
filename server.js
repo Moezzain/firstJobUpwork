@@ -22,7 +22,6 @@ const app = express();
 
 // :::::Set React Static File Directory:::::
 const ReactBuildLocation = process.env.REACT_BUILD_APP;
-const ExelSaveLocation = process.env.EXCEL_SAVE_DIR;
 
 //__listen to specific port that application will be working on__
 //__PORT specified in the .env file__
@@ -39,12 +38,12 @@ app.use(cors()); // it enables all cors requests
 app.use(fileUpload()); // file upload api
 
 //__React Static Files__
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, ReactBuildLocation)));
 
 // :::::::::Routes::::::::
 //__React App__
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, ReactBuildLocation, 'index.html'));
 });
 
 //__Appinformations CRUD__

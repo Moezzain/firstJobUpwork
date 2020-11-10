@@ -6,6 +6,8 @@ const sendEmail = require('../Services/nodeMailerConf');
 const {exec} = require('child_process');
 //__Logger__
 const {logMessage, Info, logError} = require('../Services/loggingService');
+//__Xcel File location where php will be used__
+const ExelSaveLocation = process.env.EXCEL_SAVE_DIR;
 
 class Controllersclass {
   //__calss constructor where all the variables are creat it and init__
@@ -252,7 +254,7 @@ class Controllersclass {
       }
       // Run php script
       console.log('Running Script...');
-      exec('php file.php', (error, stdout, stderr) => {
+      exec('php ' + __dirname + '/' + ExelSaveLocation + 'file.php', (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`);
           return;
@@ -264,7 +266,7 @@ class Controllersclass {
         console.log(`stdout: ${stdout}`);
       });
       // returing the response with file path and name
-      return res.status(200).send({name: myFile.name, path: `/${myFile.name}`});
+      return res.status(200).send({name: myFile.name, path: `${ExelSaveLocation}/${myFile.name}`});
     });
   }
 }
