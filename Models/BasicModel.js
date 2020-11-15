@@ -13,7 +13,7 @@ class modelClass {
     this.dbConn = mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
-      port: process.env.DB_PORT,
+      // port: process.env.DB_PORT,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
       connectionLimit: 10, // this is the max number of connections before your pool starts waiting for a release
@@ -303,6 +303,134 @@ class modelClass {
       });
     });
   }
+
+  _GET_casesCount_DATA_() {
+    var DB = this.dbConn;
+    // logMessage(Info, rowID);
+    let qr = 'select count(id) from case_information;';
+
+    logMessage(Info, 'qr ' + qr);
+    return new Promise(function(resolve, reject) {
+      DB.query(qr, function(err, result) {
+        if (err) {
+          logMessage(Info, err);
+          resolve(err);
+        }
+
+        logMessage(
+          Info,
+          'Result: ' + JSON.stringify(result[0]) /* [1].email */,
+        ); //when using procedures
+        resolve(JSON.stringify(result[0]['count(id)']));
+        //When id Specified
+        // else resolve(JSON.stringify(result));
+      });
+    });
+  }
+
+  _GET_clearDatabase_DATA_() {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        'truncate aggregation; truncate case_dimensions; truncate case_information; truncate case_paragraph; truncate case_paragraph_discrete; truncate case_text_response; truncate data_processed; truncate data_raw; truncate scale_and_labels; truncate text_response_values;',
+        function(err, result) {
+          if (err) {
+            logMessage(Info, err);
+            resolve(err);
+          }
+
+          resolve(JSON.stringify('Success'));
+        },
+      );
+    });
+  }
+
+  _GET_ExportAllData_DATA_() {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query(
+        '(SELECT \'item\',\'aggregation\') UNION (SELECT * FROM aggregation INTO OUTFILE \'\\ExportAggregation.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'id\',\'token\',\'date\',\'email\',\'name\',\'job\',\'rating_supervisors\',\'rating_subordinates\',\'rating_peers\',\'url\') UNION (SELECT * FROM case_information INTO OUTFILE \'\\ExportCasesInformation.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); SELECT \'caseid\',\'subscale\',\'SelfParagraph\',\'SuperiorParagraph\',\'SubordinateParagraph\',\'PeerParagraph\',\'AggregateParagraph\') UNION (SELECT * FROM case_paragraph INTO OUTFILE \'\\ExportCasesParagraphs.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'caseid\',\'label\',\'dimension\',\'self_rating\',\'superior_rating\',\'subordinate_rating\',\'peer_rating\',\'avg_rating\',\'aggregation\',\'avg_self\',\'avg_superior\',\'avg_subordinate\',\'avg_peer\',\'avg_aggregate\') UNION (SELECT * FROM case_dimensions INTO OUTFILE \'\\ExportCasesDimensions.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'id\',\'caseid\',\'scale\',\'subscale\',\'item\',\'self_rating\',\'superior_rating\',\'subordinate_rating\',\'peer_rating\',\'avg_rating\',\'aggregation\',\'avg_self\',\'avg_superior\',\'avg_subordinate\',\'avg_peer\',\'avg_aggregate\') UNION (SELECT * FROM data_processed INTO OUTFILE \'\\ExportCasesItems.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\');',
+        function(err, result) {
+          if (err) {
+            logMessage(Info, err);
+            resolve(err);
+          }
+
+          resolve(JSON.stringify('Success'));
+        },
+      );
+    });
+  }
+
+  _GET_getResults_DATA_(rowID) {
+    var DB = this.dbConn;
+    logMessage(Info, rowID);
+    let qr = 'select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph from case_paragraph where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=\'dYHNFZFcEp\')) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid;';
+
+    logMessage(Info, 'qr ' + qr);
+    return new Promise(function(resolve, reject) {
+      DB.query(qr, [rowID], function(err, result) {
+        if (err) {
+          logMessage(Info, err);
+          resolve(err);
+        }
+        let ret = {};
+        ret["radarChartData"] = [];
+        // console.log(result);
+        result[0].forEach((element, index) => {
+          ret["radarChartData"][index] = {};
+          ret["radarChartData"][index] = element;
+        });
+        console.log("res " + JSON.stringify(ret["radarChartData"]));
+
+        ret["labelsAndScales"] = [];
+        // console.log(result);
+        result[1].forEach((element, index) => {
+
+          ret["labelsAndScales"][index] = {};
+          ret["labelsAndScales"][index] = element;
+        });
+        console.log("res " + JSON.stringify(ret["labelsAndScales"]));
+
+        ret["dataForEachDimenstion"] = {};
+
+        result[2].forEach((element, index) => {
+        
+          ret["dataForEachDimenstion"][element.dimension] = {};
+          ret["dataForEachDimenstion"][element.dimension] = element;
+        });
+        console.log("res " + JSON.stringify(ret["dataForEachDimenstion"]));
+
+        ret["paragraphsForEachDimenstion"] = {};
+        ret["progressDataForEachDimenstion"] = {};
+
+        result[3].forEach((element, index) => {
+        
+          ret["paragraphsForEachDimenstion"][element.subscale] = {};
+          ret["paragraphsForEachDimenstion"][element.subscale] = element;
+          ret["progressDataForEachDimenstion"][element.subscale] = [];
+        });
+        console.log("res " + JSON.stringify(ret["paragraphsForEachDimenstion"]));
+
+
+        result[3].forEach((element, index) => {
+          
+          ret["progressDataForEachDimenstion"][element.dimension].push(element.Average);
+        });
+        console.log("res " + JSON.stringify(ret["progressDataForEachDimenstion"]));
+
+        resolve(JSON.stringify(ret));
+        // ret[""] = result[];
+        //__Supposed to be multiple results result[0] for query 1, 2, etc..
+        // result[0].
+        // logMessage(Info,'Result: ', result /* [1].email */); //when using procedures
+        // if (rowID) resolve(JSON.stringify(result[0]));
+        //When id Specified
+        // else resolve(JSON.stringify(result));
+      });
+    });
+  }
+
 }
 
 let Model = new modelClass();

@@ -46,24 +46,26 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, ReactBuildLocation, 'index.html'));
 });
 
-//__Appinformations CRUD__
-app.get('/appinformations/:id', APIcontrollers._appinformations_Read_); //Read
-app.get('/appinformations', APIcontrollers._appinformations_Read_); //Read all
-app.post('/appinformations', APIcontrollers._appinformations_Creat_); //Creat
-app.put('/appinformations', APIcontrollers._appinformations_Update_); //Update
-app.delete('/appinformations/:id', APIcontrollers._appinformations_Delete_); //Delete
-app.delete('/appinformations', APIcontrollers._appinformations_Delete_); //Delete //Error Handling
+//__upload page__
+app.post('/UploadCSV', APIcontrollers._excelUpload_Post_);
+app.post('/UploadText', APIcontrollers._excelTextUpload_Post_);
+app.post('/UploadVariable', APIcontrollers._excelVariableUpload_Post_);
 
-//__Categories CRUD__
-app.get('/categories/:id', APIcontrollers._categories_Read_); //Read
-app.get('/categories', APIcontrollers._categories_Read_); //Read all
-app.post('/categories', APIcontrollers._categories_Creat_); //Creat
-app.put('/categories', APIcontrollers._categories_Update_); //Update
-app.delete('/categories/:id', APIcontrollers._categories_Delete_); //Delete
-app.delete('/categories', APIcontrollers._categories_Delete_); //Delete //Error Handling
+app.get('/getHistoryUploaded', APIcontrollers.__History_Uploaded_Files_Read_); //Read all
+app.get('/clearDatabase', APIcontrollers._clearDatabase_Read_); //Read all
+app.get('/clearAllMetadata', APIcontrollers._clearAllMetadata_Read_); //Read all
+app.get('/ExportAllData', APIcontrollers._ExportAllData_Read_); //Read all
+app.get('/DataSheetFormat', APIcontrollers._DataSheetFormat_Read_); //Read all
+app.get('/ParagraphSheetFormat', APIcontrollers._ParagraphSheetFormat_Read_); //Read all
+app.get('/VariableSheetFormat', APIcontrollers._VariableSheetFormat_Read_); //Read all
 
-//__upload excelController__
-app.post('/uploadExel', APIcontrollers._excelUpload_Post_);
+//__Data View page__
+app.get('/getResults/:id', APIcontrollers._getResults_Read_); //Read all
+app.get(
+  '/getDataForSubSclae/:subScaleId',
+  APIcontrollers._getDataForSubSclae_Read_,
+); //If want to get by subscale
+app.get('/getDataForSubSclae', APIcontrollers._getDataForSubSclae_Read_); //If want to get all the data infront
 
 //__Handeling React Routes
 app.get('*', function(req, res) {
