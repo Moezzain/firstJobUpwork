@@ -349,7 +349,7 @@ class modelClass {
     var DB = this.dbConn;
     return new Promise(function(resolve, reject) {
       DB.query(
-        '(SELECT \'item\',\'aggregation\') UNION (SELECT * FROM aggregation INTO OUTFILE \'\\ExportAggregation.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'id\',\'token\',\'date\',\'email\',\'name\',\'job\',\'rating_supervisors\',\'rating_subordinates\',\'rating_peers\',\'url\') UNION (SELECT * FROM case_information INTO OUTFILE \'\\ExportCasesInformation.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); SELECT \'caseid\',\'subscale\',\'SelfParagraph\',\'SuperiorParagraph\',\'SubordinateParagraph\',\'PeerParagraph\',\'AggregateParagraph\') UNION (SELECT * FROM case_paragraph INTO OUTFILE \'\\ExportCasesParagraphs.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'caseid\',\'label\',\'dimension\',\'self_rating\',\'superior_rating\',\'subordinate_rating\',\'peer_rating\',\'avg_rating\',\'aggregation\',\'avg_self\',\'avg_superior\',\'avg_subordinate\',\'avg_peer\',\'avg_aggregate\') UNION (SELECT * FROM case_dimensions INTO OUTFILE \'\\ExportCasesDimensions.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\'); (SELECT \'id\',\'caseid\',\'scale\',\'subscale\',\'item\',\'self_rating\',\'superior_rating\',\'subordinate_rating\',\'peer_rating\',\'avg_rating\',\'aggregation\',\'avg_self\',\'avg_superior\',\'avg_subordinate\',\'avg_peer\',\'avg_aggregate\') UNION (SELECT * FROM data_processed INTO OUTFILE \'\\ExportCasesItems.csv\' FIELDS ENCLOSED BY \'\' TERMINATED BY \';\' ESCAPED BY \'\' LINES TERMINATED BY \'\\r\\n\');',
+        "(SELECT 'item','aggregation') UNION (SELECT * FROM aggregation INTO OUTFILE '\\ExportAggregation.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'id','token','date','email','name','job','rating_supervisors','rating_subordinates','rating_peers','url') UNION (SELECT * FROM case_information INTO OUTFILE '\\ExportCasesInformation.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); SELECT 'caseid','subscale','SelfParagraph','SuperiorParagraph','SubordinateParagraph','PeerParagraph','AggregateParagraph') UNION (SELECT * FROM case_paragraph INTO OUTFILE '\\ExportCasesParagraphs.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'caseid','label','dimension','self_rating','superior_rating','subordinate_rating','peer_rating','avg_rating','aggregation','avg_self','avg_superior','avg_subordinate','avg_peer','avg_aggregate') UNION (SELECT * FROM case_dimensions INTO OUTFILE '\\ExportCasesDimensions.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'id','caseid','scale','subscale','item','self_rating','superior_rating','subordinate_rating','peer_rating','avg_rating','aggregation','avg_self','avg_superior','avg_subordinate','avg_peer','avg_aggregate') UNION (SELECT * FROM data_processed INTO OUTFILE '\\ExportCasesItems.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n');",
         function(err, result) {
           if (err) {
             logMessage(Info, err);
@@ -365,59 +365,74 @@ class modelClass {
   _GET_getResults_DATA_(rowID) {
     var DB = this.dbConn;
     logMessage(Info, rowID);
-    let qr = 'select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph from case_paragraph where caseid = (select id from case_information where url=\'dYHNFZFcEp\'); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=\'dYHNFZFcEp\')) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid;';
+    let qr =
+      "select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=?); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=?); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph, CoachingParagraph  from case_paragraph where caseid = (select id from case_information where url=?); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=?)) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid; select type, label from strength_avg_weak_response where caseid = (select id from case_information where url=?) order by type;";
 
-    logMessage(Info, 'qr ' + qr);
+    // logMessage(Info, 'qr ' + qr);
     return new Promise(function(resolve, reject) {
-      DB.query(qr, [rowID], function(err, result) {
+      DB.query(qr, [rowID, rowID, rowID, rowID, rowID], function(err, result) {
         if (err) {
           logMessage(Info, err);
           resolve(err);
         }
         let ret = {};
-        ret["radarChartData"] = [];
+        ret['radarChartData'] = [];
         // console.log(result);
         result[0].forEach((element, index) => {
-          ret["radarChartData"][index] = {};
-          ret["radarChartData"][index] = element;
+          ret['radarChartData'][index] = {};
+          ret['radarChartData'][index] = element;
         });
-        console.log("res " + JSON.stringify(ret["radarChartData"]));
+        // console.log("res " + JSON.stringify(ret["radarChartData"]));
 
-        ret["labelsAndScales"] = [];
+        ret['labelsAndScales'] = [];
         // console.log(result);
         result[1].forEach((element, index) => {
-
-          ret["labelsAndScales"][index] = {};
-          ret["labelsAndScales"][index] = element;
+          ret['labelsAndScales'][index] = {};
+          ret['labelsAndScales'][index] = element;
         });
-        console.log("res " + JSON.stringify(ret["labelsAndScales"]));
+        // console.log("result[2] " + JSON.stringify(result[2]));
+        // console.log("result[1] " + JSON.stringify(result[1]));
+        // console.log("result[0] " + JSON.stringify(result[0]));
 
-        ret["dataForEachDimenstion"] = {};
+        ret['dataForEachDimenstion'] = {};
 
         result[2].forEach((element, index) => {
-        
-          ret["dataForEachDimenstion"][element.dimension] = {};
-          ret["dataForEachDimenstion"][element.dimension] = element;
+          ret['dataForEachDimenstion'][element.dimension] = {};
+          ret['dataForEachDimenstion'][element.dimension] = element;
         });
-        console.log("res " + JSON.stringify(ret["dataForEachDimenstion"]));
+        // console.log("result[4] " + JSON.stringify(result[4]));
 
-        ret["paragraphsForEachDimenstion"] = {};
-        ret["progressDataForEachDimenstion"] = {};
+        ret['paragraphsForEachDimenstion'] = {};
+        ret['progressDataForEachDimenstion'] = {};
 
         result[3].forEach((element, index) => {
-        
-          ret["paragraphsForEachDimenstion"][element.subscale] = {};
-          ret["paragraphsForEachDimenstion"][element.subscale] = element;
-          ret["progressDataForEachDimenstion"][element.subscale] = [];
+          // console.log("element.subscale " + element.subscale);
+          ret['paragraphsForEachDimenstion'][element.subscale] = {};
+          ret['paragraphsForEachDimenstion'][element.subscale] = element;
         });
-        console.log("res " + JSON.stringify(ret["paragraphsForEachDimenstion"]));
+        // console.log("progressDataForEachDimenstion " + JSON.stringify(ret["progressDataForEachDimenstion"]));
 
+        ret['progressDataForEachDimenstion']['dates'] = [];
+        // console.log("result[4] " + JSON.stringify(result[4]));
+        result[4].forEach((element, index) => {
+          if ('Democratic_Inc_Lead' === element.dimension)
+            ret['progressDataForEachDimenstion']['dates'].push(element.date);
 
-        result[3].forEach((element, index) => {
-          
-          ret["progressDataForEachDimenstion"][element.dimension].push(element.Average);
+          if (!ret['progressDataForEachDimenstion'][element.dimension])
+            ret['progressDataForEachDimenstion'][element.dimension] = [];
+          ret['progressDataForEachDimenstion'][element.dimension].push(
+            element.Average,
+          );
         });
-        console.log("res " + JSON.stringify(ret["progressDataForEachDimenstion"]));
+        // console.log("progressDataForEachDimenstion " + JSON.stringify(ret["progressDataForEachDimenstion"]));
+
+        ret['strength_avg_weak_response'] = {};
+        ret['strength_avg_weak_response']['Average Standing'] = [];
+        ret['strength_avg_weak_response'].Strengths = [];
+        ret['strength_avg_weak_response'].Weaknesses = [];
+        result[5].forEach((element, index) => {
+          ret['strength_avg_weak_response'][element.type].push(element.label);
+        });
 
         resolve(JSON.stringify(ret));
         // ret[""] = result[];
@@ -430,7 +445,6 @@ class modelClass {
       });
     });
   }
-
 }
 
 let Model = new modelClass();

@@ -253,32 +253,38 @@ class Controllersclass {
     console.log(Object.keys(req.files.csv));
     // accessing the file
     const myFile = req.files.csv; //  mv() method places the file inside public directory
-    myFile.mv(`${path.join(__dirname, '..', ExelSaveLocation)}/111${myFile.name}`, function(err) {
-      if (err) {
-        console.log(err);
-        return res.status(500).send({msg: 'Error occured'});
-      }
-      // Run php script
-      console.log('Running Script...');
-      exec(
-        'php ' + __dirname + '/' + ExelSaveLocation + 'file.php',
-        (error, stdout, stderr) => {
-          if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-          }
-          if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-          }
-          console.log(`stdout: ${stdout}`);
-        },
-      );
-      // returing the response with file path and name
-      return res
-        .status(200)
-        .send({name: myFile.name, path: `${ExelSaveLocation}/${myFile.name}`});
-    });
+    myFile.mv(
+      `${path.join(__dirname, '..', ExelSaveLocation)}/111${myFile.name}`,
+      function(err) {
+        if (err) {
+          console.log(err);
+          return res.status(500).send({msg: 'Error occured'});
+        }
+        // Run php script
+        console.log('Running Script...');
+        exec(
+          'php ' + __dirname + '/' + ExelSaveLocation + 'file.php',
+          (error, stdout, stderr) => {
+            if (error) {
+              console.log(`error: ${error.message}`);
+              return;
+            }
+            if (stderr) {
+              console.log(`stderr: ${stderr}`);
+              return;
+            }
+            console.log(`stdout: ${stdout}`);
+          },
+        );
+        // returing the response with file path and name
+        return res
+          .status(200)
+          .send({
+            name: myFile.name,
+            path: `${ExelSaveLocation}/${myFile.name}`,
+          });
+      },
+    );
   }
 
   //__UploadText__

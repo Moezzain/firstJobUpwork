@@ -1,17 +1,29 @@
 {
   "files": {
     "main.css": "/static/css/main.27e9d3dc.chunk.css",
-    "main.js": "/static/js/main.e7646ba3.chunk.js",
-    "main.js.map": "/static/js/main.e7646ba3.chunk.js.map",
+    "main.js": "/static/js/main.7383ef5b.chunk.js",
+    "main.js.map": "/static/js/main.7383ef5b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f8f2367c.js",
     "runtime-main.js.map": "/static/js/runtime-main.f8f2367c.js.map",
-    "static/js/2.58fc5fe8.chunk.js": "/static/js/2.58fc5fe8.chunk.js",
-    "static/js/2.58fc5fe8.chunk.js.map": "/static/js/2.58fc5fe8.chunk.js.map",
+    "static/js/2.b904dcc4.chunk.js": "/static/js/2.b904dcc4.chunk.js",
+    "static/js/2.b904dcc4.chunk.js.map": "/static/js/2.b904dcc4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3a7dce12465e2a73a09ee5afa2b78f9f.js": "/precache-manifest.3a7dce12465e2a73a09ee5afa2b78f9f.js",
+    "precache-manifest.f24bc93eea2ee96f0504f5aa2d225977.js": "/precache-manifest.f24bc93eea2ee96f0504f5aa2d225977.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.27e9d3dc.chunk.css.map": "/static/css/main.27e9d3dc.chunk.css.map",
-    "static/js/2.58fc5fe8.chunk.js.LICENSE.txt": "/static/js/2.58fc5fe8.chunk.js.LICENSE.txt",
+    "static/js/2.b904dcc4.chunk.js.LICENSE.txt": "/static/js/2.b904dcc4.chunk.js.LICENSE.txt",
+    "static/media/Democratic_Inc_Lead.png": "/static/media/Democratic_Inc_Lead.d45af880.png",
+    "static/media/Ideal_Inf.png": "/static/media/Ideal_Inf.7acd78c1.png",
+    "static/media/Indiv_Con.png": "/static/media/Indiv_Con.ce3c658e.png",
+    "static/media/Int_Stim.png": "/static/media/Int_Stim.dd5548d7.png",
+    "static/media/Monitoring.png": "/static/media/Monitoring.36f489ec.png",
+    "static/media/Mot.png": "/static/media/Mot.4047c6a9.png",
+    "static/media/Neg_Management.png": "/static/media/Neg_Management.515b4373.png",
+    "static/media/Only_Pres_for_Probs.png": "/static/media/Only_Pres_for_Probs.a02b9a34.png",
+    "static/media/Pos_Leadership.png": "/static/media/Pos_Leadership.2b6823be.png",
+    "static/media/Punishment_Or.png": "/static/media/Punishment_Or.f048cce0.png",
+    "static/media/Reward_reliance.png": "/static/media/Reward_reliance.81fd365f.png",
+    "static/media/Rules_Lawyer.png": "/static/media/Rules_Lawyer.36bb1e47.png",
     "static/media/avatar.jpg": "/static/media/avatar.f1d71f77.jpg",
     "static/media/bg7.jpg": "/static/media/bg7.b08234a2.jpg",
     "static/media/christian.jpg": "/static/media/christian.56633ed3.jpg",
@@ -21,8 +33,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f8f2367c.js",
-    "static/js/2.58fc5fe8.chunk.js",
+    "static/js/2.b904dcc4.chunk.js",
     "static/css/main.27e9d3dc.chunk.css",
-    "static/js/main.e7646ba3.chunk.js"
+    "static/js/main.7383ef5b.chunk.js"
   ]
 }
