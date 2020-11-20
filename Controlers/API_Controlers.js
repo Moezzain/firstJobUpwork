@@ -251,7 +251,7 @@ class Controllersclass {
     let returnedData = {};
 
     exec(
-      '.heroku/php/bin/php ' + path.join(__dirname, '..', ExelSaveLocation) + "uploadFileRawData.php",
+      'heroku/php/bin/php ' + path.join(__dirname, '..', ExelSaveLocation) + "uploadFileRawData.php",
       (error, stdout, stderr) => {
         returnedData['response_code'] = 0;
         returnedData['response_message'] = 'Success';
