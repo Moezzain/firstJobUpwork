@@ -352,7 +352,7 @@ class modelClass {
         "(SELECT 'item','aggregation') UNION (SELECT * FROM aggregation INTO OUTFILE '\\ExportAggregation.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'id','token','date','email','name','job','rating_supervisors','rating_subordinates','rating_peers','url') UNION (SELECT * FROM case_information INTO OUTFILE '\\ExportCasesInformation.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); SELECT 'caseid','subscale','SelfParagraph','SuperiorParagraph','SubordinateParagraph','PeerParagraph','AggregateParagraph') UNION (SELECT * FROM case_paragraph INTO OUTFILE '\\ExportCasesParagraphs.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'caseid','label','dimension','self_rating','superior_rating','subordinate_rating','peer_rating','avg_rating','aggregation','avg_self','avg_superior','avg_subordinate','avg_peer','avg_aggregate') UNION (SELECT * FROM case_dimensions INTO OUTFILE '\\ExportCasesDimensions.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n'); (SELECT 'id','caseid','scale','subscale','item','self_rating','superior_rating','subordinate_rating','peer_rating','avg_rating','aggregation','avg_self','avg_superior','avg_subordinate','avg_peer','avg_aggregate') UNION (SELECT * FROM data_processed INTO OUTFILE '\\ExportCasesItems.csv' FIELDS ENCLOSED BY '' TERMINATED BY ';' ESCAPED BY '' LINES TERMINATED BY '\\r\\n');",
         function(err, result) {
           if (err) {
-            logMessage(Info, err);
+            logMessage(logError, err);
             resolve(err);
           }
 
@@ -366,7 +366,7 @@ class modelClass {
     var DB = this.dbConn;
     logMessage(Info, rowID);
     let qr =
-      "select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=?); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=?); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph, CoachingParagraph  from case_paragraph where caseid = (select id from case_information where url=?); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=?)) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid; select type, label from strength_avg_weak_response where caseid = (select id from case_information where url=?) order by type;";
+      'select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=?); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=?); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph, CoachingParagraph  from case_paragraph where caseid = (select id from case_information where url=?); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=?)) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid; select type, label from strength_avg_weak_response where caseid = (select id from case_information where url=?) order by type;';
 
     // logMessage(Info, 'qr ' + qr);
     return new Promise(function(resolve, reject) {
@@ -442,6 +442,20 @@ class modelClass {
         // if (rowID) resolve(JSON.stringify(result[0]));
         //When id Specified
         // else resolve(JSON.stringify(result));
+      });
+    });
+  }
+
+  _start_data_processing_() {
+    var DB = this.dbConn;
+    return new Promise(function(resolve, reject) {
+      DB.query('CALL data_process;', function(err, result) {
+        if (err) {
+          logMessage(Info, err);
+          resolve(err);
+        }
+        console.log('procedure ended');
+        resolve(JSON.stringify('Success'));
       });
     });
   }

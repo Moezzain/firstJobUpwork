@@ -47,9 +47,7 @@ app.get('/', (req, res) => {
 });
 
 //__upload page__
-app.post('/UploadCSV', APIcontrollers._excelUpload_Post_);
-app.post('/UploadText', APIcontrollers._excelTextUpload_Post_);
-app.post('/UploadVariable', APIcontrollers._excelVariableUpload_Post_);
+app.post('/UploadSheets', APIcontrollers._excelUpload_Post_); //__Upload
 
 app.get('/getHistoryUploaded', APIcontrollers.__History_Uploaded_Files_Read_); //Read all
 app.get('/clearDatabase', APIcontrollers._clearDatabase_Read_); //Read all
@@ -58,6 +56,8 @@ app.get('/ExportAllData', APIcontrollers._ExportAllData_Read_); //Read all
 app.get('/DataSheetFormat', APIcontrollers._DataSheetFormat_Read_); //Read all
 app.get('/ParagraphSheetFormat', APIcontrollers._ParagraphSheetFormat_Read_); //Read all
 app.get('/VariableSheetFormat', APIcontrollers._VariableSheetFormat_Read_); //Read all
+
+app.get('/TestPhpRun', APIcontrollers._TestPhpRun_Read_); //Read all
 
 //__Data View page__
 app.get('/getResults/:id', APIcontrollers._getResults_Read_); //Read all

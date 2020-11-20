@@ -13,6 +13,10 @@ const path = require('path');
 //__File system access module__
 const fs = require('fs');
 
+//__Glob var for starting the procedure__
+let flag = 0;
+let errFlag = 0;
+
 class Controllersclass {
   //__calss constructor where all the variables are creat it and init__
   constructor() {}
@@ -243,46 +247,136 @@ class Controllersclass {
         });
   }
 
+  _TestPhpRun_Read_(req, res) {
+    let returnedData = {};
+
+    exec(
+      'php ' + path.join(__dirname, '..', ExelSaveLocation) + "uploadFileRawData.php",
+      (error, stdout, stderr) => {
+        returnedData['response_code'] = 0;
+        returnedData['response_message'] = 'Success';
+        returnedData['data'] = {};
+        returnedData['data'].err = error;
+        returnedData['data'].stderr = stderr;
+        returnedData['data'].stdout = stdout;
+        logMessage(Info, JSON.stringify(returnedData));
+        res.send(200, returnedData); //  Return Res
+
+        console.log('flag++ = ' + flag);
+        if (error) {
+          errFlag--;
+          console.log(`error: ${error.message}`);
+          return;
+        }
+        if (stderr) {
+          console.log(`stderr: ${stderr}`);
+          return;
+        }
+        console.log(`stdout: ${stdout}`);
+      },
+    );
+  
+  }
   //__upload page Controllers__
   //__UploadCSV__
   _excelUpload_Post_(req, res) {
     if (!req.files) {
       return res.status(500).send({msg: 'file is not found'});
     }
-
+    //__check if files not there__
+    if (
+      !req.files.csv &&
+      (!req.files.textSheet || req.body.textSheetDate !== '') &&
+      (!req.files.varSheet || req.body.varSheetDate !== '')
+    )
+      return res.status(500).send({msg: 'Not all data found'});
+    else {
+      let returnedData = {};
+      returnedData['response_code'] = 0;
+      returnedData['response_message'] = 'Success';
+      logMessage(Info, JSON.stringify(returnedData));
+      res.send(200, returnedData); //  Return Res
+    }
+    flag = 0;
+    errFlag = 0;
+    let fileNames = [];
+    fileNames = ['TextResponseDataStructure_', 'VariablesAndDefinitionsTable_'];
+    let currentDate = new Date().toISOString().slice(0, 10);
     console.log(Object.keys(req.files.csv));
     // accessing the file
     const myFile = req.files.csv; //  mv() method places the file inside public directory
     myFile.mv(
-      `${path.join(__dirname, '..', ExelSaveLocation)}/111${myFile.name}`,
+      `${path.join(__dirname, '..', ExelSaveLocation)}/DataStructure.csv`,
       function(err) {
         if (err) {
           console.log(err);
           return res.status(500).send({msg: 'Error occured'});
         }
-        // Run php script
-        console.log('Running Script...');
-        exec(
-          'php ' + __dirname + '/' + ExelSaveLocation + 'file.php',
-          (error, stdout, stderr) => {
-            if (error) {
-              console.log(`error: ${error.message}`);
-              return;
+        issuePhpCommand(0, fileNames[1] + currentDate);
+        issuePhpCommand(3, fileNames[1] + currentDate);
+        //__check file or history file for text sheet and var sheet__
+        if (req.files.textSheet && req.files.varSheet) {
+          //__Move files to wright places__
+          moveRecievedFiles(
+            req.files.textSheet,
+            0,
+            currentDate,
+            issuePhpCommand,
+          );
+          moveRecievedFiles(
+            req.files.varSheet,
+            1,
+            currentDate,
+            issuePhpCommand,
+          );
+        } else if (req.files.textSheet && !req.files.varSheet) {
+          moveRecievedFiles(
+            req.files.textSheet,
+            0,
+            currentDate,
+            issuePhpCommand,
+          );
+          issuePhpCommand(2, fileNames[1] + req.body.varSheetDate);
+        } else if (!req.files.textSheet && req.files.varSheet) {
+          issuePhpCommand(1, fileNames[0] + req.body.textSheetDate);
+          moveRecievedFiles(
+            req.files.varSheet,
+            1,
+            currentDate,
+            issuePhpCommand,
+          );
+        } else if (!req.files.textSheet && !req.files.varSheet) {
+          issuePhpCommand(1, fileNames[0] + req.body.textSheetDate);
+          issuePhpCommand(2, fileNames[1] + req.body.varSheetDate);
+        }
+        let myInterval = setInterval(() => {
+          if (flag === 4) {
+            clearInterval(myInterval);
+            if (errFlag < 0) {
+              console.log('Error before procedure');
+            } else {
+              flag = 0;
+              console.log('start procedurer..');
+              //__run procedure__
+              Model._start_data_processing_()
+                .then(result => {
+                  //  Check Error
+                  if (result.errno) throw result.sqlMessage;
+
+                  //__Run mailing script__
+                })
+                .catch(error => {
+                  logMessage(logError, error);
+                  // res.send(500, returnedData); //  Return Res
+                });
             }
-            if (stderr) {
-              console.log(`stderr: ${stderr}`);
-              return;
-            }
-            console.log(`stdout: ${stdout}`);
-          },
-        );
+          }
+        }, 1000);
         // returing the response with file path and name
-        return res
-          .status(200)
-          .send({
-            name: myFile.name,
-            path: `${ExelSaveLocation}/${myFile.name}`,
-          });
+        // return res.status(200).send({
+        //   name: myFile.name,
+        //   path: `${ExelSaveLocation}/${myFile.name}`,
+        // });
       },
     );
   }
@@ -513,82 +607,99 @@ class Controllersclass {
   //__DataSheetFormat Controllers__
   _DataSheetFormat_Read_(req, res) {
     let returnedData = {}; // to construct response
-    let rowID = req.params.id; //  to Recieve table ID
 
-    Model._GET_DataSheetFormat_DATA_(rowID)
-      .then(result => {
-        //  Check Error
-        if (result.errno) throw result.sqlMessage;
-
-        //  Constructing Response
-        returnedData['response_code'] = 0;
-        returnedData['response_message'] = 'Success';
-        returnedData['data'] = result;
-        logMessage(Info, JSON.stringify(returnedData));
-        res.send(200, returnedData); //  Return Res
-      })
-      .catch(error => {
-        //  Constructing Response
-        returnedData['response_code'] = 10;
-        returnedData['response_message'] = 'Error: DataBase Error';
-
-        logMessage(logError, error);
-        res.send(500, returnedData); //  Return Res
-      });
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/DataStructure.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
   }
 
   //__ParagraphSheetFormat Controllers__
   _ParagraphSheetFormat_Read_(req, res) {
-    let returnedData = {}; // to construct response
-    let rowID = req.params.id; //  to Recieve table ID
-
-    Model._GET_ParagraphSheetFormat_DATA_(rowID)
-      .then(result => {
-        //  Check Error
-        if (result.errno) throw result.sqlMessage;
-
-        //  Constructing Response
-        returnedData['response_code'] = 0;
-        returnedData['response_message'] = 'Success';
-        returnedData['data'] = result;
-        logMessage(Info, JSON.stringify(returnedData));
-        res.send(200, returnedData); //  Return Res
-      })
-      .catch(error => {
-        //  Constructing Response
-        returnedData['response_code'] = 10;
-        returnedData['response_message'] = 'Error: DataBase Error';
-
-        logMessage(logError, error);
-        res.send(500, returnedData); //  Return Res
-      });
+    //__Select file location__
+    fs.readdir(path.join(__dirname, '..', ExelSaveLocation), (err, files) => {
+      if (err) console.log(err);
+      else {
+        let temp = "";
+        let newestFile = "";
+        let newestFileDate;
+        let dateArray = new Array();
+        console.log('\nCurrent directory filenames:');
+        files.forEach(file => {
+          console.log(file);
+          if (file.includes('TextResponseDataStructure')) {
+            temp = file.replace('.csv', '');
+            dateArray.push(
+              new Date(temp.replace('TextResponseDataStructure_', '')).toISOString().slice(0, 10),
+            );
+          }
+        });
+        // console.log(dateArray);
+        if(dateArray.length === 0){
+          res(200);
+        }
+        if(dateArray.length === 1){
+          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/TextResponseDataStructure_' + dateArray[0].toString() + '.csv';
+          // console.log(newestFile)
+        }
+        if(dateArray.length > 1){
+          newestFileDate = dateArray[0].toString();
+          dateArray.forEach((element, index) => {
+            if(newestFileDate < element)
+              newestFileDate = element;
+          });
+          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/TextResponseDataStructure_' + newestFileDate.toString() + '.csv';
+        }
+        // console.log("before down")
+        res.download(newestFile);
+      }
+    });
   }
 
   //__VariableSheetFormat Controllers__
   _VariableSheetFormat_Read_(req, res) {
-    let returnedData = {}; // to construct response
-    let rowID = req.params.id; //  to Recieve table ID
-
-    Model._GET_VariableSheetFormat_DATA_(rowID)
-      .then(result => {
-        //  Check Error
-        if (result.errno) throw result.sqlMessage;
-
-        //  Constructing Response
-        returnedData['response_code'] = 0;
-        returnedData['response_message'] = 'Success';
-        returnedData['data'] = result;
-        logMessage(Info, JSON.stringify(returnedData));
-        res.send(200, returnedData); //  Return Res
-      })
-      .catch(error => {
-        //  Constructing Response
-        returnedData['response_code'] = 10;
-        returnedData['response_message'] = 'Error: DataBase Error';
-
-        logMessage(logError, error);
-        res.send(500, returnedData); //  Return Res
-      });
+    //__Select file location__
+    fs.readdir(path.join(__dirname, '..', ExelSaveLocation), (err, files) => {
+      if (err) console.log(err);
+      else {
+        let temp = "";
+        let newestFile = "";
+        let newestFileDate;
+        let dateArray = new Array();
+        console.log('\nCurrent directory filenames:');
+        files.forEach(file => {
+          // console.log(file);
+          if (file.includes('VariablesAndDefinitionsTable')) {
+            temp = file.replace('.csv', '');
+            dateArray.push(
+              new Date(temp.replace('VariablesAndDefinitionsTable_', '')).toISOString().slice(0, 10),
+            );
+          }
+        });
+        // console.log(dateArray);
+        if(dateArray.length === 0){
+          res(200);
+        }
+        if(dateArray.length === 1){
+          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/VariablesAndDefinitionsTable_' + dateArray[0].toString() + '.csv';
+          console.log(newestFile)
+        }
+        if(dateArray.length > 1){
+          newestFileDate = dateArray[0].toString();
+          dateArray.forEach((element, index) => {
+            if(newestFileDate < element)
+              newestFileDate = element;
+          });
+          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/VariablesAndDefinitionsTable_' + newestFileDate.toString() + '.csv';
+        }
+        // console.log("before down")
+        res.download(newestFile);
+      }
+    });
   }
 
   //__Data View Page Controllers__
@@ -677,3 +788,70 @@ class Controllersclass {
 
 let APIcontrollers = new Controllersclass();
 module.exports = APIcontrollers;
+
+//__Helper functions__
+//__post php commands__
+const issuePhpCommand = (scriptId, fileName, callback) => {
+  let scripts = [];
+  scripts = [
+    'uploadFileCaseInformation.php?fileName=DataStructure.csv',
+    'uploadFileVariables&Definitions.php?fileName=',
+    'uploadFileTextResponses.php?fileName=',
+    'uploadFileRawData.php?fileName=DataStructure.csv',
+  ];
+  if (scriptId === 1 || scriptId === 2) {
+    scripts[scriptId] = scripts[scriptId] + fileName + '.csv';
+  }
+  // Run php script
+  console.log('Running Script...');
+  exec(
+    'php ' + path.join(__dirname, '..', ExelSaveLocation) + scripts[scriptId],
+    (error, stdout, stderr) => {
+      flag++;
+      console.log('flag++ = ' + flag);
+      if (error) {
+        errFlag--;
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    },
+  );
+};
+
+//__move files__
+const moveRecievedFiles = (file, fileId, date, callback) => {
+  const myFile = file; //  mv() method places the file inside public directory
+  let fileNames = [];
+  fileNames = ['TextResponseDataStructure_', 'VariablesAndDefinitionsTable_'];
+
+  myFile.mv(
+    `${path.join(__dirname, '..', ExelSaveLocation)}/${fileNames[fileId] +
+      date}.csv`,
+    function(err) {
+      if (err) {
+        console.log(err);
+        return res.status(500).send({msg: 'Error occured'});
+      }
+      if (callback) callback(fileId + 1, fileNames[fileId] + date);
+    },
+  );
+};
+
+//__return excel sheet__
+function returnExcel(res, ReportType) {
+  //ORN_Report
+  // console.log('Reultttt: ' + result);
+  res.setHeader(
+    'Content-disposition',
+    'attachment; filename=' + ReportType + '.csv',
+  );
+  res.setHeader('content-type', 'application/octet-stream');
+
+  var buffer = xlsx.build([{name: 'main', data: data}], options);
+  res.send(buffer);
+}
