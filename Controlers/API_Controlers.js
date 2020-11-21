@@ -795,10 +795,10 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/' + 'DataStructure.csv',
-    'uploadFileVariables&Definitions.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/',
-    'uploadFileTextResponses.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/',
-    'uploadFileRawData.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/' + 'DataStructure.csv',
+    'uploadFileCaseInformation.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/' + 'DataStructure.csv',
+    'uploadFileVariables&Definitions.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/',
+    'uploadFileTextResponses.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/',
+    'uploadFileRawData.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/' + 'DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
     scripts[scriptId] = scripts[scriptId] + fileName + '.csv';
@@ -806,7 +806,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   // Run php script
   console.log('Running Script...');
   exec(
-    'php ' + path.join(__dirname, '..', ExelSaveLocation) + "/" + scripts[scriptId],
+    'php ' + path.join(__dirname, '..', PhpSaveLocation) + "/" + scripts[scriptId],
     (error, stdout, stderr) => {
       flag++;
       console.log('flag++ = ' + flag);
