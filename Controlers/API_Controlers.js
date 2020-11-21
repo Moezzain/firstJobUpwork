@@ -797,13 +797,14 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
       flag++;
       console.log('flag++ = ' + flag);
       if (error) {
-        // errFlag--;
+        errFlag--;
 
         console.log(`error: ${error + scripts[scriptId]}`);
         return;
       }
       if (stderr) {
-        console.log(`stderr: ${scripts[scriptId]}`);
+        errFlag--;
+        console.log(`stderr: ${stderr + scripts[scriptId]}`);
         return;
       }
       console.log(`stdout: `);
