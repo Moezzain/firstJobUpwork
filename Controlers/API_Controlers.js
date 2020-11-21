@@ -836,7 +836,7 @@ const moveRecievedFiles = (file, fileId, date, callback) => {
     function(err) {
       if (err) {
         console.log(err);
-        return res.status(500).send({msg: 'Error occured'});
+        // return res.status(500).send({msg: 'Error occured'});
       }
       if (callback) callback(fileId + 1, fileNames[fileId] + date);
     },
