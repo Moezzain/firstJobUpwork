@@ -795,13 +795,13 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
+    'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
     'uploadFileVariables\\&Definitions.php ',
     'uploadFileTextResponses.php ',
-    'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
+    'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
-    scripts[scriptId] = scripts[scriptId]  + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/' + fileName + '.csv';
+    scripts[scriptId] = scripts[scriptId]  + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/' + fileName + '.csv';
   }
   // Run php script
   console.log('Running Script...');
