@@ -813,14 +813,14 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
       console.log('flag++ = ' + flag);
       if (error) {
         errFlag--;
-        console.log(`error: ${error.message}`);
+        console.log(`error: }`);
         return;
       }
       if (stderr) {
-        console.log(`stderr: ${stderr}`);
+        console.log(`stderr: `);
         return;
       }
-      console.log(`stdout: ${stdout}`);
+      console.log(`stdout: `);
     },
   );
 };
