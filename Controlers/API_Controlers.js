@@ -807,7 +807,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   console.log('Running Script...');
   console.log( 'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId]);
   exec(
-    'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId], {maxBuffer: 1024 * 500}
+    'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId], {maxBuffer: 1024 * 500},
     (error, stdout, stderr) => {
       flag++;
       console.log('flag++ = ' + flag);
