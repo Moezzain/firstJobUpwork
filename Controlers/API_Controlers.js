@@ -807,21 +807,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   console.log('Running Script...');
   console.log( 'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId]);
   exec(
-    'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId],
-    (error, stdout, stderr) => {
-      flag++;
-      console.log('flag++ = ' + flag);
-      if (error) {
-        errFlag--;
-        console.log(`error: ${scripts[scriptId]}`);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${scripts[scriptId]}`);
-        return;
-      }
-      console.log(`stdout: `);
-    },
+    'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId]
   );
 };
 
