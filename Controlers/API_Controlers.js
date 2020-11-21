@@ -817,7 +817,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
         return;
       }
       if (stderr) {
-        console.log(`stderr: `);
+        console.log(`stderr: ${scripts[scriptId]}`);
         return;
       }
       console.log(`stdout: `);
