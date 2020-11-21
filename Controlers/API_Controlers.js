@@ -805,6 +805,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   }
   // Run php script
   console.log('Running Script...');
+  console.log( 'php ' + path.join(__dirname, '..', PhpSaveLocation) + ' ' + scripts[scriptId]);
   exec(
     'php ' + path.join(__dirname, '..', PhpSaveLocation) + ' ' + scripts[scriptId],
     (error, stdout, stderr) => {
