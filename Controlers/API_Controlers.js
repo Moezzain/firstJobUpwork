@@ -250,32 +250,17 @@ class Controllersclass {
 
   _TestPhpRun_Read_(req, res) {
     let returnedData = {};
+    Model._start_data_processing_()
+    .then(result => {
+      //  Check Error
+      if (result.errno) throw result.sqlMessage;
 
-    exec(
-      'heroku/php/bin/php ' + path.join(__dirname, '..', ExelSaveLocation) + "uploadFileRawData.php",
-      (error, stdout, stderr) => {
-        returnedData['response_code'] = 0;
-        returnedData['response_message'] = 'Success';
-        returnedData['data'] = {};
-        returnedData['data'].err = error;
-        returnedData['data'].stderr = stderr;
-        returnedData['data'].stdout = stdout;
-        logMessage(Info, JSON.stringify(returnedData));
-        res.send(200, returnedData); //  Return Res
-
-        console.log('flag++ = ' + flag);
-        if (error) {
-          errFlag--;
-          console.log(`error: ${error.message}`);
-          return;
-        }
-        if (stderr) {
-          console.log(`stderr: ${stderr}`);
-          return;
-        }
-        console.log(`stdout: ${stdout}`);
-      },
-    );
+      //__Run mailing script__
+    })
+    .catch(error => {
+      logMessage(logError, error);
+      // res.send(500, returnedData); //  Return Res
+    });
   
   }
   //__upload page Controllers__
