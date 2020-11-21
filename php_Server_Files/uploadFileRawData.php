@@ -16,12 +16,12 @@ if ($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-if (($handle = fopen("./Reporting Files/" . $fileName, "r")) == FALSE){
+if (($handle = fopen($fileName, "r")) == FALSE){
 	die("Can't Open File");
 }
 
 $row = 0;
-if (($handle = fopen("./Reporting Files/" . $fileName, "r")) !== FALSE) {
+if (($handle = fopen($fileName, "r")) !== FALSE) {
 //if (($handle = fopen("VariablesAndDefinitionsTable.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 100000000, ",")) !== FALSE) {
 		$case_item[0] = $row;

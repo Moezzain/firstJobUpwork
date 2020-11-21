@@ -6,7 +6,7 @@ $fileName = $argv[1];
 
 require("connect.php");
 
-if (($handle = fopen("./Reporting Files/" . $fileName, "r")) == FALSE){
+if (($handle = fopen($fileName, "r")) == FALSE){
 	die("Can't Open File");
 }
 
@@ -19,7 +19,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $row = 0;
-if (($handle = fopen("./Reporting Files/" . $fileName, "r")) !== FALSE) {
+if (($handle = fopen($fileName, "r")) !== FALSE) {
 //if (($handle = fopen("VariablesAndDefinitionsTable.csv", "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);

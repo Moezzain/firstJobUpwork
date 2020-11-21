@@ -795,18 +795,18 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php DataStructure.csv',
-    'uploadFileVariables&Definitions.php ',
+    'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
+    'uploadFileVariables\&Definitions.php ',
     'uploadFileTextResponses.php ',
-    'uploadFileRawData.php DataStructure.csv',
+    'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
-    scripts[scriptId] = scripts[scriptId] + fileName + '.csv';
+    scripts[scriptId] = scripts[scriptId]  + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/' + fileName + '.csv';
   }
   // Run php script
   console.log('Running Script...');
   exec(
-    'php ' + path.join(__dirname, '..', PhpSaveLocation) + "/" + scripts[scriptId],
+    'php ' + path.join(__dirname, '..', PhpSaveLocation) + scripts[scriptId],
     (error, stdout, stderr) => {
       flag++;
       console.log('flag++ = ' + flag);
