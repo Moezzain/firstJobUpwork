@@ -796,7 +796,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
     'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
-    'uploadFileVariables\&Definitions.php ',
+    'uploadFileVariables\\&Definitions.php ',
     'uploadFileTextResponses.php ',
     'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting Files/DataStructure.csv',
   ];
