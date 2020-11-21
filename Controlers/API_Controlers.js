@@ -544,7 +544,7 @@ class Controllersclass {
     let rowID = req.params.id; //  to Recieve table ID
 
     exec(
-      'rm -r' + path.join(__dirname, '..', ExelSaveLocation) + '/*',
+      'rm -r ' + path.join(__dirname, '..', ExelSaveLocation) + '/*',
       (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`);
