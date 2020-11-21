@@ -8,6 +8,7 @@ const {exec} = require('child_process');
 const {logMessage, Info, logError} = require('../Services/loggingService');
 //__Xcel File location where php will be used__
 const ExelSaveLocation = process.env.EXCEL_SAVE_DIR;
+const PhpSaveLocation = process.env.PHP_DIR;
 //__Path manipulation module__
 const path = require('path');
 //__File system access module__
@@ -794,10 +795,10 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php?fileName=DataStructure.csv',
-    'uploadFileVariables&Definitions.php?fileName=',
-    'uploadFileTextResponses.php?fileName=',
-    'uploadFileRawData.php?fileName=DataStructure.csv',
+    'uploadFileCaseInformation.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/' + 'DataStructure.csv',
+    'uploadFileVariables&Definitions.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/',
+    'uploadFileTextResponses.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/',
+    'uploadFileRawData.php?fileName=' + path.join(__dirname, '..', PhpSaveLocation) + '/' + 'DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
     scripts[scriptId] = scripts[scriptId] + fileName + '.csv';
