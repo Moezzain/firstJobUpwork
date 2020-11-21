@@ -795,10 +795,10 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/' + 'DataStructure.csv',
-    'uploadFileVariables&Definitions.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/',
-    'uploadFileTextResponses.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/',
-    'uploadFileRawData.php?fileName=' + path.join(__dirname, '..', ExelSaveLocation) + '/' + 'DataStructure.csv',
+    'uploadFileCaseInformation.php?fileName=DataStructure.csv',
+    'uploadFileVariables&Definitions.php?fileName=',
+    'uploadFileTextResponses.php?fileName=',
+    'uploadFileRawData.php?fileName=DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
     scripts[scriptId] = scripts[scriptId] + fileName + '.csv';
