@@ -803,7 +803,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
         return;
       }
       if (stderr) {
-        errFlag--;
+        // errFlag--;
         console.log(`stderr: ${stderr + scripts[scriptId]}`);
         return;
       }
