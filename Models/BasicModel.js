@@ -366,11 +366,11 @@ class modelClass {
     var DB = this.dbConn;
     logMessage(Info, rowID);
     let qr =
-      'select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=?); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=?); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph, CoachingParagraph  from case_paragraph where caseid = (select id from case_information where url=?); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where email = (select email from case_information where url=?)) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid; select type, label from strength_avg_weak_response where caseid = (select id from case_information where url=?) order by type;';
+      'select label, avg_rating, aggregation from case_dimensions where caseid = (select id from case_information where url=?); select scale, label from scale_and_labels; select dimension, avg_rating Average, self_rating Self, superior_rating Superiors, subordinate_rating Subordinates, peer_rating Peers, aggregation Aggregation from case_dimensions where caseid = (select id from case_information where url=?); select subscale, AggregateParagraph, SelfParagraph, SuperiorParagraph, SubordinateParagraph, PeerParagraph, CoachingParagraph from case_paragraph where caseid = (select id from case_information where url=?); select case_info.date, case_dim.caseid, case_dim.dimension, case_dim.avg_rating Average from case_dimensions case_dim LEFT JOIN case_information case_info on case_info.id = case_dim.caseid where case_dim.caseid in (select id from case_information where user_id = (select user_id from case_information where url=?) and token = (select token from case_information where url=?)) ORDER BY case_dim.dimension, case_info.date, case_dim.caseid; select type, label from strength_avg_weak_response where caseid = (select id from case_information where url=?) order by type;';
 
     // logMessage(Info, 'qr ' + qr);
     return new Promise(function(resolve, reject) {
-      DB.query(qr, [rowID, rowID, rowID, rowID, rowID], function(err, result) {
+      DB.query(qr, [rowID, rowID, rowID, rowID, rowID, rowID], function(err, result) {
         if (err) {
           logMessage(Info, err);
           resolve(err);
