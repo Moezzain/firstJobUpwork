@@ -781,8 +781,8 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
     'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
-    'uploadFileVariables\\&Definitions.php ',
     'uploadFileTextResponses.php ',
+    'uploadFileVariables\\&Definitions.php ',
     'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
   ];
   if (scriptId === 1 || scriptId === 2) {
