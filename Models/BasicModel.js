@@ -377,7 +377,7 @@ class modelClass {
         }
         let ret = {};
         ret['radarChartData'] = [];
-        // console.log(result);
+        console.log(result[0]);
         result[0].forEach((element, index) => {
           ret['radarChartData'][index] = {};
           ret['radarChartData'][index] = element;
@@ -390,7 +390,7 @@ class modelClass {
           ret['labelsAndScales'][index] = {};
           ret['labelsAndScales'][index] = element;
         });
-        // console.log("result[2] " + JSON.stringify(result[2]));
+        console.log("result[2] " + JSON.stringify(result[2]));
         // console.log("result[1] " + JSON.stringify(result[1]));
         // console.log("result[0] " + JSON.stringify(result[0]));
 
@@ -413,7 +413,7 @@ class modelClass {
         // console.log("progressDataForEachDimenstion " + JSON.stringify(ret["progressDataForEachDimenstion"]));
 
         ret['progressDataForEachDimenstion']['dates'] = [];
-        // console.log("result[4] " + JSON.stringify(result[4]));
+        console.log("result[4] " + JSON.stringify(result[4]));
         result[4].forEach((element, index) => {
           if ('Democratic_Inc_Lead' === element.dimension)
             ret['progressDataForEachDimenstion']['dates'].push(element.date);
