@@ -580,7 +580,7 @@ class Controllersclass {
     issuePhpCommand(7);
     issuePhpCommand(8);
     let myInterval = setInterval(() => {
-      if (allExportFlag === 4) {
+      if (allExportFlag === 5) {
         clearInterval(myInterval);
         if (errFlag < 0) {
           console.log('Error before procedure');
