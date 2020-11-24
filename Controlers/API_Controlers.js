@@ -13,7 +13,8 @@ const PhpSaveLocation = process.env.PHP_DIR;
 const path = require('path');
 //__File system access module__
 const fs = require('fs');
-
+//__Express Zip download__
+var zip = require('express-zip');
 //__Glob var for starting the procedure__
 let flag = 0;
 let allExportFlag = 0;
@@ -590,26 +591,29 @@ class Controllersclass {
         } else {
           allExportFlag = 0;
           let fileLocation = "";
+          let zipArray = [];
           console.log('Before download');
-          // exportArray.forEach(element => {
-          //   fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
-          //   console.log('fileLocation: ' + fileLocation);
-
-          //   res.download(fileLocation);
-          // });
-          // console.log('start procedurer..');
-          returnedData['response_code'] = 0;
-          returnedData['response_message'] = 'Success';
-          returnedData['data'] = {};
-          returnedData['data']['paths'] = [];
           exportArray.forEach((element, index) => {
-            fileLocation =
-              path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+            fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
             console.log('fileLocation: ' + fileLocation);
-            returnedData['data']['paths'][index] = fileLocation;
+            zipArray[index] = {};
+            zipArray[index].path = fileLocation;
+            zipArray[index].name = element;
           });
-          logMessage(Info, JSON.stringify(returnedData));
-          res.send(200, returnedData); //  Return Res
+          res.zip(zipArray);
+          // console.log('start procedurer..');
+          // returnedData['response_code'] = 0;
+          // returnedData['response_message'] = 'Success';
+          // returnedData['data'] = {};
+          // returnedData['data']['paths'] = [];
+          // exportArray.forEach((element, index) => {
+          //   fileLocation =
+          //     path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+          //   console.log('fileLocation: ' + fileLocation);
+          //   returnedData['data']['paths'][index] = fileLocation;
+          // });
+          // logMessage(Info, JSON.stringify(returnedData));
+          // res.send(200, returnedData); //  Return Res
         }
       }
     }, 500);
