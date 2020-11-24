@@ -589,7 +589,7 @@ class Controllersclass {
           console.log('Error before procedure');
         } else {
           allExportFlag = 0;
-          // let fileLocation = "";
+          let fileLocation = "";
           console.log('Before download');
           // exportArray.forEach(element => {
           //   fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
