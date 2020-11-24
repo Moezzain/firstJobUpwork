@@ -588,12 +588,13 @@ class Controllersclass {
           allExportFlag = 0;
           let fileLocation = "";
           console.log('Before download');
-          exportArray.forEach(element => {
-            fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+          // exportArray.forEach(element => {
+            // fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+            fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/ExportAggregation.csv';
             console.log('fileLocation: ' + fileLocation);
 
             res.download(fileLocation);
-          });
+          // });
           // console.log('start procedurer..');
           // returnedData['response_code'] = 0;
           // returnedData['response_message'] = 'Success';
