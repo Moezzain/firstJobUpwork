@@ -590,7 +590,7 @@ class Controllersclass {
           console.log('Before download');
           // exportArray.forEach(element => {
             // fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
-            fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/ExportAggregation.csv';
+            fileLocation = path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/ExportAggregation.csv';
             console.log('fileLocation: ' + fileLocation);
 
             res.download(fileLocation);
