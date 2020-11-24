@@ -12,7 +12,7 @@ const PhpSaveLocation = process.env.PHP_DIR;
 //__Path manipulation module__
 const path = require('path');
 //__File system access module__
-const fs = require('fs'); 
+const fs = require('fs');
 
 //__Glob var for starting the procedure__
 let flag = 0;
@@ -252,17 +252,16 @@ class Controllersclass {
   _TestPhpRun_Read_(req, res) {
     let returnedData = {};
     Model._start_data_processing_()
-    .then(result => {
-      //  Check Error
-      if (result.errno) throw result.sqlMessage;
+      .then(result => {
+        //  Check Error
+        if (result.errno) throw result.sqlMessage;
 
-      //__Run mailing script__
-    })
-    .catch(error => {
-      logMessage(logError, error);
-      // res.send(500, returnedData); //  Return Res
-    });
-  
+        //__Run mailing script__
+      })
+      .catch(error => {
+        logMessage(logError, error);
+        // res.send(500, returnedData); //  Return Res
+      });
   }
   //__upload page Controllers__
   //__UploadCSV__
@@ -530,7 +529,9 @@ class Controllersclass {
     let rowID = req.params.id; //  to Recieve table ID
 
     exec(
-      'rm -r ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/*',
+      'rm -r ' +
+        path.join(__dirname, '..', PhpSaveLocation) +
+        '/Reporting\\ Files/*',
       (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`);
@@ -568,11 +569,13 @@ class Controllersclass {
   //__ExportAllData Controllers__
   _ExportAllData_Read_(req, res) {
     let returnedData = {}; // to construct response
-    let exportArray = ['ExportAggregation.csv',
-    'ExportCasesDimensions.csv',
-    'ExportCasesInformation.csv',
-    'ExportCasesItems.csv',
-    'ExportCasesParagraphs.csv'];
+    let exportArray = [
+      'ExportAggregation.csv',
+      'ExportCasesDimensions.csv',
+      'ExportCasesInformation.csv',
+      'ExportCasesItems.csv',
+      'ExportCasesParagraphs.csv',
+    ];
 
     issuePhpCommand(4);
     issuePhpCommand(5);
@@ -586,19 +589,27 @@ class Controllersclass {
           console.log('Error before procedure');
         } else {
           allExportFlag = 0;
-          let fileLocation = "";
+          // let fileLocation = "";
           console.log('Before download');
-          exportArray.forEach(element => {
-            fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
-            console.log('fileLocation: ' + fileLocation);
+          // exportArray.forEach(element => {
+          //   fileLocation = path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+          //   console.log('fileLocation: ' + fileLocation);
 
-            res.download(fileLocation);
-          });
+          //   res.download(fileLocation);
+          // });
           // console.log('start procedurer..');
-          // returnedData['response_code'] = 0;
-          // returnedData['response_message'] = 'Success';
-          // returnedData['data'] = {};
-          // returnedData['data']['path'] = path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/';
+          returnedData['response_code'] = 0;
+          returnedData['response_message'] = 'Success';
+          returnedData['data'] = {};
+          returnedData['data']['paths'] = [];
+          exportArray.forEach((element, index) => {
+            fileLocation =
+              path.join(__dirname, '..', ExelSaveLocation) + '/' + element;
+            console.log('fileLocation: ' + fileLocation);
+            returnedData['data']['paths'][index] = fileLocation;
+          });
+          logMessage(Info, JSON.stringify(returnedData));
+          res.send(200, returnedData); //  Return Res
         }
       }
     }, 500);
@@ -618,14 +629,84 @@ class Controllersclass {
     // res.send(200, returnedData); //  Return Res
   }
 
+  //__DataSheetFormat Controllers__
+  _ExportAggregation_Read_(req, res) {
+    let returnedData = {}; // to construct response
+
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/ExportAggregation.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
+  }
+
+  //__DataSheetFormat Controllers__
+  _ExportCasesDimensions_Read_(req, res) {
+    let returnedData = {}; // to construct response
+
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/ExportCasesDimensions.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
+  }
+  
+  //__DataSheetFormat Controllers__
+  _ExportCasesInformation_Read_(req, res) {
+    let returnedData = {}; // to construct response
+
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/ExportCasesInformation.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
+  }
+
+  //__DataSheetFormat Controllers__
+  _ExportCasesItems_Read_(req, res) {
+    let returnedData = {}; // to construct response
+
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/ExportCasesItems.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
+  }
+
+  //__DataSheetFormat Controllers__
+  _ExportCasesParagraphs_Read_(req, res) {
+    let returnedData = {}; // to construct response
+
+    //__Select file location__
+    let fileLocation =
+      path.join(__dirname, '..', ExelSaveLocation) + '/ExportCasesParagraphs.csv';
+    res.download(fileLocation);
+    // returnedData['response_code'] = 0;
+    // returnedData['response_message'] = 'Success';
+    // returnedData['data'] = fileLocation;
+    // res.send(200, returnedData); //  Return Res
+  }
+
   //__ParagraphSheetFormat Controllers__
   _ParagraphSheetFormat_Read_(req, res) {
     //__Select file location__
     fs.readdir(path.join(__dirname, '..', ExelSaveLocation), (err, files) => {
       if (err) console.log(err);
       else {
-        let temp = "";
-        let newestFile = "";
+        let temp = '';
+        let newestFile = '';
         let newestFileDate;
         let dateArray = new Array();
         console.log('\nCurrent directory filenames:');
@@ -634,25 +715,34 @@ class Controllersclass {
           if (file.includes('TextResponseDataStructure')) {
             temp = file.replace('.csv', '');
             dateArray.push(
-              new Date(temp.replace('TextResponseDataStructure_', '')).toISOString().slice(0, 10),
+              new Date(temp.replace('TextResponseDataStructure_', ''))
+                .toISOString()
+                .slice(0, 10),
             );
           }
         });
         // console.log(dateArray);
-        if(dateArray.length === 0){
+        if (dateArray.length === 0) {
           res(200);
         }
-        if(dateArray.length === 1){
-          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/TextResponseDataStructure_' + dateArray[0].toString() + '.csv';
+        if (dateArray.length === 1) {
+          newestFile =
+            path.join(__dirname, '..', ExelSaveLocation) +
+            '/TextResponseDataStructure_' +
+            dateArray[0].toString() +
+            '.csv';
           // console.log(newestFile)
         }
-        if(dateArray.length > 1){
+        if (dateArray.length > 1) {
           newestFileDate = dateArray[0].toString();
           dateArray.forEach((element, index) => {
-            if(newestFileDate < element)
-              newestFileDate = element;
+            if (newestFileDate < element) newestFileDate = element;
           });
-          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/TextResponseDataStructure_' + newestFileDate.toString() + '.csv';
+          newestFile =
+            path.join(__dirname, '..', ExelSaveLocation) +
+            '/TextResponseDataStructure_' +
+            newestFileDate.toString() +
+            '.csv';
         }
         // console.log("before down")
         res.download(newestFile);
@@ -666,8 +756,8 @@ class Controllersclass {
     fs.readdir(path.join(__dirname, '..', ExelSaveLocation), (err, files) => {
       if (err) console.log(err);
       else {
-        let temp = "";
-        let newestFile = "";
+        let temp = '';
+        let newestFile = '';
         let newestFileDate;
         let dateArray = new Array();
         console.log('\nCurrent directory filenames:');
@@ -676,25 +766,34 @@ class Controllersclass {
           if (file.includes('VariablesAndDefinitionsTable')) {
             temp = file.replace('.csv', '');
             dateArray.push(
-              new Date(temp.replace('VariablesAndDefinitionsTable_', '')).toISOString().slice(0, 10),
+              new Date(temp.replace('VariablesAndDefinitionsTable_', ''))
+                .toISOString()
+                .slice(0, 10),
             );
           }
         });
         // console.log(dateArray);
-        if(dateArray.length === 0){
+        if (dateArray.length === 0) {
           res(200);
         }
-        if(dateArray.length === 1){
-          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/VariablesAndDefinitionsTable_' + dateArray[0].toString() + '.csv';
-          console.log(newestFile)
+        if (dateArray.length === 1) {
+          newestFile =
+            path.join(__dirname, '..', ExelSaveLocation) +
+            '/VariablesAndDefinitionsTable_' +
+            dateArray[0].toString() +
+            '.csv';
+          console.log(newestFile);
         }
-        if(dateArray.length > 1){
+        if (dateArray.length > 1) {
           newestFileDate = dateArray[0].toString();
           dateArray.forEach((element, index) => {
-            if(newestFileDate < element)
-              newestFileDate = element;
+            if (newestFileDate < element) newestFileDate = element;
           });
-          newestFile = path.join(__dirname, '..', ExelSaveLocation) + '/VariablesAndDefinitionsTable_' + newestFileDate.toString() + '.csv';
+          newestFile =
+            path.join(__dirname, '..', ExelSaveLocation) +
+            '/VariablesAndDefinitionsTable_' +
+            newestFileDate.toString() +
+            '.csv';
         }
         // console.log("before down")
         res.download(newestFile);
@@ -794,10 +893,14 @@ module.exports = APIcontrollers;
 const issuePhpCommand = (scriptId, fileName, callback) => {
   let scripts = [];
   scripts = [
-    'uploadFileCaseInformation.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
+    'uploadFileCaseInformation.php ' +
+      path.join(__dirname, '..', PhpSaveLocation) +
+      '/Reporting\\ Files/DataStructure.csv',
     'uploadFileTextResponses.php ',
     'uploadFileVariables\\&Definitions.php ',
-    'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
+    'uploadFileRawData.php ' +
+      path.join(__dirname, '..', PhpSaveLocation) +
+      '/Reporting\\ Files/DataStructure.csv',
     'ExportAggregation.php',
     'ExportCasesDimensions.php',
     'ExportCasesInformation.php',
@@ -805,19 +908,31 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
     'ExportCasesParagraphs.php',
   ];
   if (scriptId === 1 || scriptId === 2) {
-    scripts[scriptId] = scripts[scriptId]  + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/' + fileName + '.csv';
+    scripts[scriptId] =
+      scripts[scriptId] +
+      path.join(__dirname, '..', PhpSaveLocation) +
+      '/Reporting\\ Files/' +
+      fileName +
+      '.csv';
   }
   // Run php script
   console.log('Running Script...');
-  console.log( 'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId]);
+  console.log(
+    'php ' +
+      path.join(__dirname, '..', PhpSaveLocation) +
+      '/' +
+      scripts[scriptId],
+  );
   exec(
-    'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId], {maxBuffer: 1024 * 5000},
+    'php ' +
+      path.join(__dirname, '..', PhpSaveLocation) +
+      '/' +
+      scripts[scriptId],
+    {maxBuffer: 1024 * 5000},
     (error, stdout, stderr) => {
-      if(scriptId > 3)
-        allExportFlag++;
-      else
-        flag++;
-      console.log('flag++ = ' + flag + "allExportFlag++ = " + allExportFlag);
+      if (scriptId > 3) allExportFlag++;
+      else flag++;
+      console.log('flag++ = ' + flag + 'allExportFlag++ = ' + allExportFlag);
       if (error) {
         errFlag--;
 

@@ -56,6 +56,11 @@ app.get('/ExportAllData', APIcontrollers._ExportAllData_Read_); //Read all
 app.get('/DataSheetFormat', APIcontrollers._DataSheetFormat_Read_); //Read all
 app.get('/ParagraphSheetFormat', APIcontrollers._ParagraphSheetFormat_Read_); //Read all
 app.get('/VariableSheetFormat', APIcontrollers._VariableSheetFormat_Read_); //Read all
+app.get('/ExportAggregation', APIcontrollers._ExportAggregation_Read_); //Read all
+app.get('/ExportCasesDimensions', APIcontrollers._ExportCasesDimensions_Read_); //Read all
+app.get('/ExportCasesInformation', APIcontrollers._ExportCasesInformation_Read_); //Read all
+app.get('/ExportCasesItems', APIcontrollers._ExportCasesItems_Read_); //Read all
+app.get('/ExportCasesParagraphs', APIcontrollers._ExportCasesParagraphs_Read_); //Read all
 
 app.get('/TestPhpRun', APIcontrollers._TestPhpRun_Read_); //Read all
 
