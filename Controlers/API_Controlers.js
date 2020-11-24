@@ -16,6 +16,7 @@ const fs = require('fs');
 
 //__Glob var for starting the procedure__
 let flag = 0;
+let allExportFlag = 0;
 let errFlag = 0;
 
 class Controllersclass {
@@ -567,27 +568,36 @@ class Controllersclass {
   //__ExportAllData Controllers__
   _ExportAllData_Read_(req, res) {
     let returnedData = {}; // to construct response
+    let exportArray = ['ExportAggregation.csv',
+    'ExportCasesDimensions.csv',
+    'ExportCasesInformation.csv',
+    'ExportCasesItems.csv',
+    'ExportCasesParagraphs.csv'];
 
-    Model._GET_ExportAllData_DATA_()
-      .then(result => {
-        //  Check Error
-        if (result.errno) throw result.sqlMessage;
+    issuePhpCommand(4);
+    issuePhpCommand(5);
+    issuePhpCommand(6);
+    issuePhpCommand(7);
+    issuePhpCommand(8);
+    let myInterval = setInterval(() => {
+      if (allExportFlag === 4) {
+        clearInterval(myInterval);
+        if (errFlag < 0) {
+          console.log('Error before procedure');
+        } else {
+          allExportFlag = 0;
+          exportArray.forEach(element => {
 
-        //  Constructing Response
-        returnedData['response_code'] = 0;
-        returnedData['response_message'] = 'Success';
-        returnedData['data'] = result;
-        logMessage(Info, JSON.stringify(returnedData));
-        res.send(200, returnedData); //  Return Res
-      })
-      .catch(error => {
-        //  Constructing Response
-        returnedData['response_code'] = 10;
-        returnedData['response_message'] = 'Error: DataBase Error';
-
-        logMessage(logError, error);
-        res.send(500, returnedData); //  Return Res
-      });
+            res.download(path.join(__dirname, '..', ExelSaveLocation) + '/' + element);
+          });
+          // console.log('start procedurer..');
+          // returnedData['response_code'] = 0;
+          // returnedData['response_message'] = 'Success';
+          // returnedData['data'] = {};
+          // returnedData['data']['path'] = path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/';
+        }
+      }
+    }, 500);
   }
 
   //__DataSheetFormat Controllers__
@@ -784,6 +794,11 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
     'uploadFileTextResponses.php ',
     'uploadFileVariables\\&Definitions.php ',
     'uploadFileRawData.php ' + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/DataStructure.csv',
+    'ExportAggregation.php',
+    'ExportCasesDimensions.php',
+    'ExportCasesInformation.php',
+    'ExportCasesItems.php',
+    'ExportCasesParagraphs.php',
   ];
   if (scriptId === 1 || scriptId === 2) {
     scripts[scriptId] = scripts[scriptId]  + path.join(__dirname, '..', PhpSaveLocation) + '/Reporting\\ Files/' + fileName + '.csv';
@@ -794,8 +809,11 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
   exec(
     'php ' + path.join(__dirname, '..', PhpSaveLocation) + '/' + scripts[scriptId], {maxBuffer: 1024 * 5000},
     (error, stdout, stderr) => {
-      flag++;
-      console.log('flag++ = ' + flag);
+      if(scriptId > 3)
+        allExportFlag++;
+      else
+        flag++;
+      console.log('flag++ = ' + flag + "allExportFlag++ = " + allExportFlag);
       if (error) {
         errFlag--;
 
