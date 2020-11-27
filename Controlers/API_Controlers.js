@@ -288,7 +288,7 @@ class Controllersclass {
     errFlag = 0;
     let fileNames = [];
     fileNames = ['TextResponseDataStructure_', 'VariablesAndDefinitionsTable_'];
-    let currentDate = new Date().toISOString().slice(0, 10);
+    let currentDate = new Date().toISOString().slice(0, 19);
     console.log(Object.keys(req.files.csv));
     // accessing the file
     const myFile = req.files.csv; //  mv() method places the file inside public directory
