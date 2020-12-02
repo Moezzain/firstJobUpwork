@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.27e9d3dc.chunk.css",
-    "main.js": "/static/js/main.017234e2.chunk.js",
-    "main.js.map": "/static/js/main.017234e2.chunk.js.map",
+    "main.css": "/static/css/main.428db5ca.chunk.css",
+    "main.js": "/static/js/main.6ebff6fa.chunk.js",
+    "main.js.map": "/static/js/main.6ebff6fa.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f8f2367c.js",
     "runtime-main.js.map": "/static/js/runtime-main.f8f2367c.js.map",
-    "static/js/2.29aec054.chunk.js": "/static/js/2.29aec054.chunk.js",
-    "static/js/2.29aec054.chunk.js.map": "/static/js/2.29aec054.chunk.js.map",
+    "static/js/2.4363eb4a.chunk.js": "/static/js/2.4363eb4a.chunk.js",
+    "static/js/2.4363eb4a.chunk.js.map": "/static/js/2.4363eb4a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4e25f1e8377b8572a3a8e2942de94e30.js": "/precache-manifest.4e25f1e8377b8572a3a8e2942de94e30.js",
+    "precache-manifest.c051bb8cfdcc9fe7c7abbae722ca841a.js": "/precache-manifest.c051bb8cfdcc9fe7c7abbae722ca841a.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.27e9d3dc.chunk.css.map": "/static/css/main.27e9d3dc.chunk.css.map",
-    "static/js/2.29aec054.chunk.js.LICENSE.txt": "/static/js/2.29aec054.chunk.js.LICENSE.txt",
+    "static/css/main.428db5ca.chunk.css.map": "/static/css/main.428db5ca.chunk.css.map",
+    "static/js/2.4363eb4a.chunk.js.LICENSE.txt": "/static/js/2.4363eb4a.chunk.js.LICENSE.txt",
+    "static/media/app.css": "/static/media/Vilsuve-Regular.fd6c20ec.ttf",
     "static/media/Democratic_Inc_Lead.png": "/static/media/Democratic_Inc_Lead.d45af880.png",
     "static/media/Ideal_Inf.png": "/static/media/Ideal_Inf.7acd78c1.png",
     "static/media/Indiv_Con.png": "/static/media/Indiv_Con.ce3c658e.png",
@@ -28,13 +29,12 @@
     "static/media/bg7.jpg": "/static/media/bg7.b08234a2.jpg",
     "static/media/christian.jpg": "/static/media/christian.56633ed3.jpg",
     "static/media/compass-594838487.jpg": "/static/media/compass-594838487.bfe68bb1.jpg",
-    "static/media/kendall.jpg": "/static/media/kendall.e0508cc9.jpg",
-    "static/media/landing-bg.jpg": "/static/media/landing-bg.df8fd3ef.jpg"
+    "static/media/kendall.jpg": "/static/media/kendall.e0508cc9.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.f8f2367c.js",
-    "static/js/2.29aec054.chunk.js",
-    "static/css/main.27e9d3dc.chunk.css",
-    "static/js/main.017234e2.chunk.js"
+    "static/js/2.4363eb4a.chunk.js",
+    "static/css/main.428db5ca.chunk.css",
+    "static/js/main.6ebff6fa.chunk.js"
   ]
 }
