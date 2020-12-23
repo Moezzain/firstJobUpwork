@@ -932,7 +932,7 @@ const issuePhpCommand = (scriptId, fileName, callback) => {
       path.join(__dirname, '..', PhpSaveLocation) +
       '/' +
       scripts[scriptId],
-    {maxBuffer: 1024 * 5000},
+    {maxBuffer: 1024 * 10000},
     (error, stdout, stderr) => {
       if (scriptId > 3) allExportFlag++;
       else flag++;
