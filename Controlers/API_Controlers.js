@@ -721,7 +721,7 @@ class Controllersclass {
             dateArray.push(
               new Date(temp.replace('TextResponseDataStructure_', ''))
                 .toISOString()
-                .slice(0, 10),
+                .slice(0, 19),
             );
           }
         });
@@ -735,7 +735,7 @@ class Controllersclass {
             '/TextResponseDataStructure_' +
             dateArray[0].toString() +
             '.csv';
-          // console.log(newestFile)
+          console.log(newestFile)
         }
         if (dateArray.length > 1) {
           newestFileDate = dateArray[0].toString();
@@ -748,7 +748,7 @@ class Controllersclass {
             newestFileDate.toString() +
             '.csv';
         }
-        // console.log("before down")
+        console.log("before down")
         res.download(newestFile);
       }
     });
@@ -772,7 +772,7 @@ class Controllersclass {
             dateArray.push(
               new Date(temp.replace('VariablesAndDefinitionsTable_', ''))
                 .toISOString()
-                .slice(0, 10),
+                .slice(0, 19),
             );
           }
         });
@@ -799,7 +799,7 @@ class Controllersclass {
             newestFileDate.toString() +
             '.csv';
         }
-        // console.log("before down")
+        console.log("before down")
         res.download(newestFile);
       }
     });
