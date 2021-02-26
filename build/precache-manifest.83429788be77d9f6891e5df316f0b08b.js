@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6ff7ca6e8402080f9d5ce05dd7222397",
+    "revision": "2d70b7816cabfcb3d9d6182522f45364",
     "url": "/index.html"
   },
   {
-    "revision": "f2533bb2ddcf1916dd39",
-    "url": "/static/css/main.fafdf119.chunk.css"
+    "revision": "64ce432f0a59f9d48b3e",
+    "url": "/static/css/main.ad21da30.chunk.css"
   },
   {
     "revision": "ed624bd809e4c7163c85",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.604c5d10.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f2533bb2ddcf1916dd39",
-    "url": "/static/js/main.a5bc5448.chunk.js"
+    "revision": "64ce432f0a59f9d48b3e",
+    "url": "/static/js/main.5b8d1343.chunk.js"
   },
   {
     "revision": "fe9bcabd5cb4ab614db9",
@@ -26,6 +26,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2cbcc23a9fb355b53be686fc02542778",
     "url": "/static/media/BeVietnam-Regular.2cbcc23a.ttf"
+  },
+  {
+    "revision": "d777a437a66a38babbf5a6fec1b2a5bf",
+    "url": "/static/media/Cairo Bold 700.d777a437.ttf"
+  },
+  {
+    "revision": "5d92f14a907a9204434b792e1f398bf2",
+    "url": "/static/media/Cairo Light 300.5d92f14a.ttf"
+  },
+  {
+    "revision": "ba23baa3045470dc90590780483461fc",
+    "url": "/static/media/Cairo Regular 400.ba23baa3.ttf"
   },
   {
     "revision": "d45af880827f829ff1b7c1df830559c8",
