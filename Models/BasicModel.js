@@ -332,7 +332,7 @@ class modelClass {
     var DB = this.dbConn;
     return new Promise(function(resolve, reject) {
       DB.query(
-        'truncate aggregation; truncate case_processed_dimension; truncate case_information; truncate case_paragraph; truncate case_paragraph_discrete; truncate case_text_response; truncate case_processed_item; truncate data_raw; truncate scale_and_labels; truncate text_response_values; truncate strength_avg_weak_response;',
+        'truncate aggregation; truncate case_processed_dimension; truncate case_information; truncate case_paragraph; truncate case_paragraph_discrete; truncate case_text_response; truncate case_processed_item; truncate data_raw; truncate scale_and_labels; truncate text_response_values; truncate strength_avg_weak_response; update Variables set value = 0 where name = \'MaxID\'',
         function(err, result) {
           if (err) {
             logMessage(Info, err);
